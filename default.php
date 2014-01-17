@@ -251,7 +251,7 @@ function print_duda_form(){
 	?>
     Currently this only shows a textbox to the user and then generates a mobile preview. This mobile preview is also saved in your Duda Reseller Dashboard.<br/><br/>
  
-    <form action="options-general.php?page=cnc-duda-reseller/default.php" method="post">
+    <form action="options-general.php?page=cnc-dudamobile-reseller-preview/default.php" method="post"> 
     	<label for"api_username">API Username:
         	<input type="text" name="duda_api_username" value="<?=$duda_api_username?>" />
         </label>
