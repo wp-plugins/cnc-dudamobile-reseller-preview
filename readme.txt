@@ -42,6 +42,8 @@ It only works if you have a plan that has the Duda API access.
 
 == Changelog ==
 
+= 0.2 =
+Added debug option in settings to see the error returned by dudamobile api
 
 = 0.1 =
 Initial release
