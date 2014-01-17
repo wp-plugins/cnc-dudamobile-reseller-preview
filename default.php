@@ -142,9 +142,12 @@ window.frames["mobilepreview"].location.reload();
 	$info = curl_getinfo($ch);
 	
 	if ($info['http_code'] != 200) {
-	//	print("<br/>Error getting site data.<br/><br/>");
-	//	print_r($output);
-	//	print_r($info);
+		print("<br/>Error getting site data.<br/><br/>");
+	if ($duda_debug ==1)
+		{
+		print_r($output);
+		print_r($info);
+		}
 		die();
 	}
 	
