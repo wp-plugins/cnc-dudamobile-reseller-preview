@@ -85,12 +85,10 @@ The best thing is to install an error log plugin and look at the error log.  If 
 
 
 == Changelog ==
-
 = 1.4 =
 
 
-* Added preveiw options ("mobile" or "before & after")
-
+* Some plugins would sanitize the url breaking the embed code, this fixes that.
 
 
 = 1.3 =
