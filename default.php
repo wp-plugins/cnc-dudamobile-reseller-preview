@@ -597,7 +597,8 @@ function print_duda_form(){
 
 <br/><br/>
 
-    I am also available if you are looking for hosting, web design or custom programming. Contact me if you have a project in mind at <a href="mailto:kevin@cncwebsolutions.com">kevin@cncwebsolutions.com</a>. <strong><br/>WordPress hosting starting at just $1.</strong>
+    I am also available if you are looking for hosting, web design or custom programming. Contact me if you have a project in mind at <a href="mailto:kevin@cncwebsolutions.com">kevin@cncwebsolutions.com</a>. <strong><br/><a href="http://cncwebsolutions.com">WordPress hosting starting at just $1</a></strong><br/>
+    <a href="http://cncwebsolutions.com">Created by CNC Web Solutions</a>
 
     <?php
 
