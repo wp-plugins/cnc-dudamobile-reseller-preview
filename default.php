@@ -361,6 +361,14 @@ window.frames["mobilepreview"].location.reload();
 
 	curl_close($ch);
 
+
+if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$beforeAfterUrl))
+  {
+  $beforeAfterUrl = "http://" . $beforeAfterUrl;
+  }
+
+
+
 	echo '<iframe seamless="seamless" scrolling="auto" id="mobilepreview" width="1100" height="930" src="http://'. $beforeAfterUrl . '"></iframe>';
 
 
