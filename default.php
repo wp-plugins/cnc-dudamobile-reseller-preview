@@ -8,7 +8,7 @@
 
  * Description: Create Dudamobile previews instantly
 
- * Version: 1.1
+ * Version: 1.2
 
  * Author: Kevin Champlin
 
@@ -361,7 +361,7 @@ window.frames["mobilepreview"].location.reload();
 
 	curl_close($ch);
 
-	echo '<iframe  id="mobilepreview" width="1100" height="930" src="'. $beforeAfterUrl . '"></iframe>';
+	echo '<iframe  id="mobilepreview" width="1100" height="930" src="http://'. $beforeAfterUrl . '"></iframe>';
 
 
 

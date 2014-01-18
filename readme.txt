@@ -8,7 +8,7 @@ Requires at least: 3.8
 
 Tested up to: 3.8
 
-Stable tag: 1.1
+Stable tag: 1.2
 
 License: GPLv2 or later
 
@@ -85,6 +85,13 @@ The best thing is to install an error log plugin and look at the error log.  If 
 
 
 == Changelog ==
+
+= 1.2 =
+
+
+* Fixed a bug with the embed tag
+
+
 
 = 1.1 =
 
