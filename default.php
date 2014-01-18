@@ -8,7 +8,7 @@
 
  * Description: Create Dudamobile previews instantly
 
- * Version: 1.3
+ * Version: 1.4
 
  * Author: Kevin Champlin
 
@@ -71,11 +71,17 @@ add_filter("plugin_action_links_$plugin", 'cnc_plugin_settings_duda' );
  function show_duda_stuff()
 
  {
-
 	$duda_username = get_option('duda_api_username');
 	$duda_password = get_option('duda_api_password');
 	$duda_button_text = get_option('duda_button_text');
+	$duda_preview_type = get_option('duda_preview_type');
 	$duda_debug = get_option('duda_api_debug');
+	
+	
+		if (strlen($duda_preview_type) == 0){
+		$duda_preview_type = 0;
+	}
+
 	
 	if (strlen($duda_button_text) == 0){
 		$duda_button_text = "create my mobile preview";
@@ -360,9 +366,29 @@ window.frames["mobilepreview"].location.reload();
 	
 
 	curl_close($ch);
+	
+	
+	
+if (strpos($previewUrl, 'href://') == 0) {
+    $previewUrl = "href://" . $previewUrl;
+}	
+	
 
-	echo '<iframe seamless="seamless" scrolling="auto" id="mobilepreview" width="1100" height="930" src="http://'. $beforeAfterUrl . '"></iframe>';
+if (strpos($beforeAfterUrl, 'href://') == 0) {
+    $beforeAfterUrl = "href://" . $beforeAfterUrl;
+}	
 
+
+
+
+if ($duda_preview_type ==0)
+{
+	echo '<iframe seamless="seamless" scrolling="auto" id="mobilepreview" width="1100" height="930" src="'. $previewUrl . '"></iframe>';
+}
+else
+{
+	echo '<iframe seamless="seamless" scrolling="auto" id="mobilepreview" width="1100" height="930" src="'. $beforeAfterUrl . '"></iframe>';
+}
 
 
 }
@@ -391,6 +417,7 @@ window.frames["mobilepreview"].location.reload();
 	add_option('duda_api_username','api username goes here','API Username');
 	add_option('duda_api_password','api password','API Password');
 	add_option('duda_button_text','button text ','Button Text');
+	add_option('duda_preview_type','preview type','Preview Type');
 	add_option('duda_api_debug','api debug','API Debug');
 
  }
@@ -402,6 +429,7 @@ window.frames["mobilepreview"].location.reload();
  	delete_option('duda_api_username');
 	delete_option('duda_api_password');
 	delete_option('duda_button_text');
+	delete_option('duda_preview_type');
 	delete_option('duda_api_debug');
 
  }
@@ -491,6 +519,7 @@ if ($_REQUEST['duda_button_text']){
 
 }
 
+	update_option('duda_preview_type',$_REQUEST['duda_preview_type']);
 
 	update_option('duda_api_debug',$_REQUEST['duda_api_debug']);
 
@@ -565,10 +594,26 @@ function print_duda_form(){
 
         </label>
 
-        <br/> <br/>
+        <br/>
+        
+        <br/>
         
 
-        <label for"ap_debug">&nbsp;&nbsp;Debug:
+        <label for"ap_debug">&nbsp;&nbsp;Mobile Preview Type:
+
+       
+
+        <input name="duda_preview_type" type="radio" value="0" <?php if ($duda_preview_type ==0 || $duda_preview_type !=1) echo "checked=checked" ?>  />Mobile Site
+
+        <input type="radio" name ="duda_preview_type" value="1" <?php if ($duda_preview_type ==1) echo "checked=checked" ?> />Before & After
+
+        </label>
+
+        
+         <br/> <br/>
+        
+
+        <label for"ap_debug">&nbsp;&nbsp;Debug Mode:
 
        
 
