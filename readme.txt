@@ -21,8 +21,10 @@ Add dudamobile previews on your wordpress page easy by using a shortcode.
 
 == Description ==
 
-This plugin is for dudamobile resellers that have API access. It allows you to enter your api username and api password in the settings.  Then you can use a shortcode to display the mobile preview on any page.  This was only tested on WordPress version 3.8 so I cannot conifrm if it works on any past versions.  If it does please let me know.<br/><br/>
-All you need to make this work is to add the short code: [cnc_duda] to your page.  Remeber to add your username and password under Settings in the admin.
+This plugin is for dudamobile resellers that have API access. It allows you to enter your api username and api password in the settings.  Then you can use a shortcode to display the mobile preview on any page.  This was only tested on WordPress version 3.8 so I cannot confirm if it works on any past versions.  If it does please let me know.
+
+
+All you need to make this work is to add the short code: [cnc_duda] to your page.  Remember to add your username and password under Settings in the admin.
 
 
 
