@@ -4,11 +4,11 @@
 
  * Plugin Name: Duda Reseller API Plugin
 
- * Plugin URI: http://cncwebsolutions.com/dudamobile-reseller-wordpress-plugin/
+ * Plugin URI: http://wordpress.org/plugins/cnc-dudamobile-reseller-preview/
 
  * Description: Create Dudamobile previews instantly
 
- * Version: 1.0
+ * Version: 1.1
 
  * Author: Kevin Champlin
 
@@ -73,10 +73,16 @@ add_filter("plugin_action_links_$plugin", 'cnc_plugin_settings_duda' );
  {
 
 	$duda_username = get_option('duda_api_username');
-
 	$duda_password = get_option('duda_api_password');
-
+	$duda_button_text = get_option('duda_button_text');
 	$duda_debug = get_option('duda_api_debug');
+	
+	if (strlen($duda_button_text) == 0){
+		$duda_button_text = "create my mobile preview";
+	}
+	
+	
+	
 
 ?>	
 
@@ -159,11 +165,11 @@ function RestoreSubmitButton()
 
   
    <strong>Enter your Website URL:</strong>
-        <input type="text" value="" name="ifrmSite" id="ifrmsite"/ > 
+        <input type="text" class="cnc_url" value="" name="ifrmSite" id="ifrmsite"/ > 
   
 
         <div id="formsubmitbutton"  class="cncSubmit" >
-            <input type="submit" name="submit" id="submit" value=" create my mobile site "  onclick="ButtonClicked()">
+            <input type="submit" class="cnc_submit" name="submit" id="submit" value=" <?=$duda_button_text; ?> "  onclick="ButtonClicked()">
         </div>
         <div id="buttonreplacement"  style="position:relative; margin-left:370px; top:-35px; display:none;">
         <img src="<?= plugins_url('/cnc-dudamobile-reseller-preview/') .'images/ajax-loader.gif'?>" alt="loading..." />
@@ -375,18 +381,16 @@ window.frames["mobilepreview"].location.reload();
 
  }
 
- add_shortcode( 'cnc_duda', 'show_duda_stuff' );
+ add_shortcode( 'cnc_duda', 'show_duda_stuff' ); // old shortcode (still works for backward compatability)
+ add_shortcode( 'dudamobile_preview', 'show_duda_stuff' );  // new shortcode - will be used moving forward
 
  
 
   function set_duda_options()
-
  {
-
 	add_option('duda_api_username','api username goes here','API Username');
-
 	add_option('duda_api_password','api password','API Password');
-
+	add_option('duda_button_text','button text ','Button Text');
 	add_option('duda_api_debug','api debug','API Debug');
 
  }
@@ -396,24 +400,15 @@ window.frames["mobilepreview"].location.reload();
  function unset_duda_options() {
 
  	delete_option('duda_api_username');
-
 	delete_option('duda_api_password');
-
+	delete_option('duda_button_text');
 	delete_option('duda_api_debug');
-
-
 
  }
 
 
-
 register_activation_hook(__FILE__,'set_duda_options');
-
 register_deactivation_hook(__FILE__,'unset_duda_options');
-
-
-
-
 
 
 
@@ -443,7 +438,8 @@ function admin_duda_options(){
 
     <div class="wrap">
 
-    <h2>Duda Reseller Preview Options</h2>
+    <h2>Duda Reseller API Options</h2>
+    <hr/>
 
     <?php
 
@@ -487,6 +483,13 @@ if ($_REQUEST['duda_api_password']){
 
 }
 
+if ($_REQUEST['duda_button_text']){
+
+	update_option('duda_button_text',$_REQUEST['duda_button_text']);
+
+	$ok=true;
+
+}
 
 
 	update_option('duda_api_debug',$_REQUEST['duda_api_debug']);
@@ -528,14 +531,14 @@ if ($_REQUEST['duda_api_password']){
 function print_duda_form(){
 
 	$duda_api_username =  get_option('duda_api_username');
-
 	$duda_api_password = get_option('duda_api_password');
-
+	$duda_button_text = get_option('duda_button_text');
 	$duda_api_debug = get_option('duda_api_debug');
 
 	?>
 
-    Currently this only shows a textbox to the user and then generates a mobile preview. This mobile preview is also saved in your Duda Reseller Dashboard.<br/><br/>
+    This will create a form allow users to submit their url and then generates a mobile preview. <br/>
+    This mobile preview is also saved in your Duda Reseller Dashboard.<br/><br/>
 
  
 
@@ -556,22 +559,28 @@ function print_duda_form(){
         </label>
 
         <br/>
+  	<label for"duda_button_text">&nbsp;&nbsp;Button Text:
 
+        	<input   name="duda_button_text" type="text" value="<?=$duda_button_text?>" size="50" />
+
+        </label>
+
+        <br/> <br/>
         
 
         <label for"ap_debug">&nbsp;&nbsp;Debug:
 
-        
+       
 
-        <input type="radio" name="duda_api_debug" value="0" <?php if ($duda_api_debug ==0) echo "checked=checked" ?>  />no
+        <input name="duda_api_debug" type="radio" value="0" <?php if ($duda_api_debug ==0 || $duda_api_debug !=1) echo "checked=checked" ?>  />no
 
         <input type="radio" name ="duda_api_debug" value="1" <?php if ($duda_api_debug ==1) echo "checked=checked" ?> />yes
 
         </label>
 
-        <br/>
+         <br/><br/>
 
-        <input type ="submit" name ="submit" value="Submit" />
+        <input type ="submit" name ="submit" value=" Save " />
 
     </form>
 
@@ -581,7 +590,7 @@ function print_duda_form(){
 
     <hr/>
 
-    This is in the very early stages, much more to come!  If this is helpful to you, please consider a donation.  This takes time to do and I'm not going to sell this. However your donations will motivate me to add more  Duda API calls to this.  
+    If you found this plugin useful please consider donating.   
 
     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 
@@ -597,8 +606,8 @@ function print_duda_form(){
 
 <br/><br/>
 
-    I am also available if you are looking for hosting, web design or custom programming. Contact me if you have a project in mind at <a href="mailto:kevin@cncwebsolutions.com">kevin@cncwebsolutions.com</a>. <strong><br/><a href="http://cncwebsolutions.com">WordPress hosting starting at just $1</a></strong><br/>
-    <a href="http://cncwebsolutions.com">Created by CNC Web Solutions</a>
+    If you need hosting, domains, design or custom programming <a href="mailto:kevin@cncwebsolutions.com">contact us</a><br/>
+    <strong><a href="http://cncwebsolutions.com/1-web-hosting/" target="_blank">WordPress hosting starting at just $1.</a></strong>
 
     <?php
 

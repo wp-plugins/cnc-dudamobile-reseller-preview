@@ -8,7 +8,7 @@ Requires at least: 3.8
 
 Tested up to: 3.8
 
-Stable tag: 1.0
+Stable tag: 1.1
 
 License: GPLv2 or later
 
@@ -21,8 +21,10 @@ Add dudamobile previews on your wordpress page easy by using a shortcode.
 
 == Description ==
 
-This plugin is for dudamobile resellers that have API access. It allows you to enter your api username and api password in the settings.  Then you can use a shortcode to display the mobile preview on any page.  This was only tested on WordPress version 3.8 so I cannot conifrm if it works on any past versions.  If it does please let me know.<br/><br/>
-All you need to make this work is to add the short code: [cnc_duda] to your page.  Remeber to add your username and password under Settings in the admin.
+This plugin is for dudamobile resellers that have API access. It allows you to enter your api username and api password in the settings.  Then you can use a shortcode to display the mobile preview on any page.  This was only tested on WordPress version 3.8 so I cannot confirm if it works on any past versions.  If it does please let me know.
+
+
+All you need to make this work is to add the short code: [dudamobile_preview] to your page.  Remember to add your username and password under Settings in the admin.
 
 
 
@@ -41,7 +43,7 @@ All you need to make this work is to add the short code: [cnc_duda] to your page
 
 1. Go to the admin and click on settings then choose 'CNC Duda Preview'. Enter your API Username & Password here
 
-1. Place the shortcode [cnc_duda] on any page you would like to show the mobile preview.
+1. Place the shortcode [dudamobile_preview] on any page you would like to show the mobile preview.
 
 
 
@@ -57,15 +59,14 @@ In the settings you can turn debugging on or off.  If you turn it on you will se
 errors are not updating the API Username & Password in the settings.
 
 = Do I have to edit code to make this work? =
-Absolutely not! Just install the plugin, add your username & password in the settings adn then use the shortcode.  Simple!
+Absolutely not! Just install the plugin, add your username & password in the settings and then use the shortcode.  Simple!
 
 
 = Does this use all the API functions =
 Not yet, this only creates the mobile comparison preview.  I will add more features as time allows.
 
-= When will other features be available? =
-Truthfully I'm not sure, this is primarily a hobby at this point. If I can receive some donations that would motivate me more. :)
-
+= It just isn't working, what can I do? =
+The best thing is to install an error log plugin and look at the error log.  If you have an error log you can send it to kevin@cncwebsolutions.com
 
 
 
@@ -76,7 +77,7 @@ Truthfully I'm not sure, this is primarily a hobby at this point. If I can recei
 
 2. Textbox to type the website to convert
 
-3. Pretty comparison embeddded in your site
+3. Pretty comparison embedded in your site
 
 
 
@@ -85,7 +86,15 @@ Truthfully I'm not sure, this is primarily a hobby at this point. If I can recei
 
 == Changelog ==
 
+= 1.1 =
 
+
+
+* Added custom button text
+
+* Added new styles form
+
+* Added new shortcode [dudamobile_preview]  (old shortcode still works)
 
 = 1.0 =
 
@@ -116,9 +125,9 @@ Initial release
 
 == Arbitrary section ==
 
-* Settings page to add your api username & password.  Also turn debuging on and off.
+* Settings page to add your api username & password.  Also turn debugging on and off.
 
-* Shortcode to add your mobile preview on any page [cnc_duda]
+* Shortcode to add your mobile preview on any page [dudamobile_preview]
 
 
 
