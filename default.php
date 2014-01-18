@@ -8,7 +8,7 @@
 
  * Description: Create Dudamobile previews instantly
 
- * Version: 1.4
+ * Version: 1.4.1
 
  * Author: Kevin Champlin
 
