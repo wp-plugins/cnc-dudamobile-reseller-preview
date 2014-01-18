@@ -4,7 +4,7 @@
 
  * Plugin Name: Duda Reseller API Plugin
 
- * Plugin URI: http://cncwebsolutions.com/dudamobile-reseller-wordpress-plugin/
+ * Plugin URI: http://wordpress.org/plugins/cnc-dudamobile-reseller-preview/
 
  * Description: Create Dudamobile previews instantly
 
