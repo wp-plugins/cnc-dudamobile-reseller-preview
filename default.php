@@ -8,7 +8,7 @@
 
  * Description: Create Dudamobile previews instantly
 
- * Version: 1.3
+ * Version: 1.4
 
  * Author: Kevin Champlin
 
@@ -369,7 +369,7 @@ if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-
 
 
 
-	echo '<iframe seamless="seamless" scrolling="auto" id="mobilepreview" width="1100" height="930" src="http://'. $beforeAfterUrl . '"></iframe>';
+	echo '<iframe seamless="seamless" scrolling="auto" id="mobilepreview" width="1100" height="930" src="'. $beforeAfterUrl . '"></iframe>';
 
 
 
