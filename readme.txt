@@ -59,7 +59,7 @@ In the settings you can turn debugging on or off.  If you turn it on you will se
 errors are not updating the API Username & Password in the settings.
 
 = Do I have to edit code to make this work? =
-Absolutely not! Just install the plugin, add your username & password in the settings adn then use the shortcode.  Simple!
+Absolutely not! Just install the plugin, add your username & password in the settings and then use the shortcode.  Simple!
 
 
 = Does this use all the API functions =
@@ -78,7 +78,7 @@ Truthfully I'm not sure, this is primarily a hobby at this point. If I can recei
 
 2. Textbox to type the website to convert
 
-3. Pretty comparison embeddded in your site
+3. Pretty comparison embedded in your site
 
 
 
@@ -118,7 +118,7 @@ Initial release
 
 == Arbitrary section ==
 
-* Settings page to add your api username & password.  Also turn debuging on and off.
+* Settings page to add your api username & password.  Also turn debugging on and off.
 
 * Shortcode to add your mobile preview on any page [cnc_duda]
 
