@@ -8,7 +8,7 @@ Requires at least: 3.8
 
 Tested up to: 3.8
 
-Stable tag: 1.4
+Stable tag: 1.3
 
 License: GPLv2 or later
 
@@ -85,13 +85,6 @@ The best thing is to install an error log plugin and look at the error log.  If 
 
 
 == Changelog ==
-
-= 1.4 =
-
-
-* Added preveiw options ("mobile" or "before & after")
-
-
 
 = 1.3 =
 
