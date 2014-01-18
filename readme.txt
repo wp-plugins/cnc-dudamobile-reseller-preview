@@ -8,7 +8,7 @@ Requires at least: 3.8
 
 Tested up to: 3.8
 
-Stable tag: 1.2
+Stable tag: 1.3
 
 License: GPLv2 or later
 
@@ -85,6 +85,13 @@ The best thing is to install an error log plugin and look at the error log.  If 
 
 
 == Changelog ==
+
+= 1.3 =
+
+
+* Allowed the iframe source to scroll if the site is to small to containthe preview of 1100px.
+
+
 
 = 1.2 =
 
