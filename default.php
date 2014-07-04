@@ -306,7 +306,7 @@ function RestoreSubmitButton()
 </script>
 <style>
 
-#website_form{width:500px; margin-right: auto; margin-left: auto; }
+#website_form{width:400px; margin-right: auto; margin-left: auto; }
 #website_form legend{}
 #website_form label{}
 #website_form label span{float:left; width:100px; color:#666666;}
