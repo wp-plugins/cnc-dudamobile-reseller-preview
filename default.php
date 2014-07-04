@@ -3,7 +3,7 @@
  * Plugin Name: Duda Reseller API Plugin
  * Plugin URI: http://wordpress.org/plugins/cnc-dudamobile-reseller-preview/
  * Description: Create Dudamobile previews instantly
- * Version: 1.5.2
+ * Version: 1.5.3
  * Author: CNC Web Solutions - Kevin Champlin
  * Author URI: http://cncwebsolutions.com
  * License: GPL2
@@ -306,34 +306,27 @@ function RestoreSubmitButton()
 </script>
 <style>
 
-#website_form{ width:300px; padding:20px; border: 1px solid #DDD;border-radius: 5px; font-family: Arial; font-size: 11px; font-weight: bold;color: #666666; background:#FAFAFA; margin-right: auto; margin-left: auto;}
-#website_form legend{font-size: 15px; color: #C9C9C9;}
-#website_form label{display: block; margin-bottom:5px;}
+#website_form{width:500px; margin-right: auto; margin-left: auto; }
+#website_form legend{}
+#website_form label{}
 #website_form label span{float:left; width:100px; color:#666666;}
-#website_form input{height: 25px; border: 1px solid #DBDBDB; border-radius: 3px; padding-left: 4px; color: #666; width: 180px; font-family: Arial, Helvetica, sans-serif;}
-#website_form textarea{border: 1px solid #DBDBDB; border-radius: 3px; padding-left: 4px;color: #666; height:100px; width: 180px; font-family: Arial, Helvetica, sans-serif;}
-.submit_btn { border: 1px solid #D8D8D8; padding: 5px 15px 5px 15px; color: #8D8D8D; text-shadow: 1px 1px 1px #FFF; border-radius: 3px; background: #F8F8F8; left:0px;}
-.submit_btn:hover { background: #ECECEC;}
+#website_form input{}
+#website_form textarea{}
+.submit_btn {}
+.submit_btn:hover {}
 .success{ background: #CFFFF5;padding: 10px; margin-bottom: 10px; border: 1px solid #B9ECCE; border-radius: 5px; font-weight: normal; }
 .error{ background: #FFDFDF; padding: 10px; margin-bottom: 10px; border: 1px solid #FFCACA; border-radius: 5px; font-weight: normal;}
-	iframe {
-    width: 960px;
-    height: 950px;
-    margin: 0 auto;
-    background-color: #FFF;
-	display:block;
-	margin-top:30px;
-	border:none;
+iframe {
+width: 960px;
+height: 950px;
+margin: 0 auto;
+background-color: #FFF;
+display:block;
+margin-top:30px;
+border:none;
 }
 legend {
-display: block;
-width:90px;
-padding: 0;
-margin-bottom: 0px;
-font-size: 21px;
-line-height: inherit;
-color: #333;
-border: 0;
+
 }
 
 </style>  
@@ -344,7 +337,7 @@ echo '<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 ?>
 <script type="text/javascript">
 $(document).ready(function() {
-	
+	$("#content").hide();
     $("#submit_btn").click(function() { 
         //get input field values
 		$('#loading').show('fast');
@@ -392,6 +385,7 @@ $(document).ready(function() {
 			
 			
 			//    $("#content2").html(data.url);
+				$("#content").show();
 			    $("#content").attr("src",data.url);
 				$('#loading').hide('fast');
 					 
@@ -417,7 +411,6 @@ $(document).ready(function() {
 });
 </script>  
 <fieldset id="website_form">
-<legend>Mobilize Me!</legend>
   <label for="website">
     <input name="website" type="text" id="website" placeholder="Enter Your Website"  />
     </label>
@@ -432,6 +425,7 @@ $(document).ready(function() {
 <div id="content2"></div>
 <div>
 <iframe id="content"></iframe>
+test content under iframe
 </div>
 <?php
 

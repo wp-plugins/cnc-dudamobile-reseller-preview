@@ -8,7 +8,7 @@ Requires at least: 3.8
 
 Tested up to: 3.9
 
-Stable tag: 1.5.1
+Stable tag: 1.5.3
 
 License: GPLv2 or later
 
@@ -39,16 +39,18 @@ All you need to make this work is to add the short code: [dudamobile_preview] to
 
 1. Click install or upload `cnc-duda-reseller` to the `/wp-content/plugins/` directory
 
-1. Activate the plugin through the 'Plugins' menu in WordPress
+2. Activate the plugin through the 'Plugins' menu in WordPress
 
-1. Go to the admin and click on settings then choose 'CNC Duda Preview'. Enter your API Username & Password here
+3. Go to the admin and click on settings then choose 'CNC Duda Preview'. Enter your API Username & Password here
 
-1. Place the shortcode [dudamobile_preview] on any page you would like to show the mobile preview.
+4. Place the shortcode [dudamobile_preview] on any page you would like to show the mobile preview.
 
-
+5. If it doesn't work go back into your settings and make sure toggle Use jQuery link to yes or no. 
 
 == Frequently Asked Questions ==
 
+= It's not working? =
+Under the Settings there is a section to show jQuery or not (yes/no) if its not working change this and try it again. Now days most templates include jquery but some done so here you can toggle it on and off depending on your websites needs.
 
 
 = Does this work with any Dudamobile plan =
@@ -68,6 +70,9 @@ Not yet, this only creates the mobile comparison preview.  I will add more featu
 = It just isn't working, what can I do? =
 The best thing is to install an error log plugin and look at the error log.  If you have an error log you can send it to kevin@cncwebsolutions.com
 
+= This is awesome, can I send you a donation? =
+Yes! I truly spent a lot of time on this and would love a donation.  My paypal id is sales@cncwebsolutions.com  If you found this useful or better if it makes you money please don't forget about me :)
+
 
 
 
@@ -85,6 +90,19 @@ The best thing is to install an error log plugin and look at the error log.  If 
 
 
 == Changelog ==
+
+1.5.3
+
+* The iframe now loads when the mobile comparison is ready - saves on screen real estate this way.
+* Removed a lot of the design, this way it blends in with other templates better
+ 
+
+1.5.2
+
+
+* Fixed jquery toggle 
+* Updated description
+ 
 
 1.5.1
 
