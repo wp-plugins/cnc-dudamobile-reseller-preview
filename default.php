@@ -418,7 +418,7 @@ $(document).ready(function() {
   </label>
 </fieldset>
 <div id="loading" style="display: none; margin:0 auto;">
-	<center><img src="<?= plugins_url('/cnc-dudamobile-reseller-preview/')?>'/images/loader.gif" style="vertical-align: middle;margin:0 auto;" /> Loading...</center>
+	<center><img src="<?= plugins_url('/cnc-dudamobile-reseller-preview/')?>images/loader.gif" style="vertical-align: middle;margin:0 auto;" /> Loading...</center>
 </div>
 
 <div id="content2"></div>
