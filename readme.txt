@@ -6,9 +6,9 @@ Tags: dudamobile, reseller
 
 Requires at least: 3.8
 
-Tested up to: 3.8
+Tested up to: 3.9
 
-Stable tag: 1.4.1
+Stable tag: 1.5.1
 
 License: GPLv2 or later
 
@@ -59,7 +59,7 @@ In the settings you can turn debugging on or off.  If you turn it on you will se
 errors are not updating the API Username & Password in the settings.
 
 = Do I have to edit code to make this work? =
-Absolutely not! Just install the plugin, add your username & password in the settings and then use the shortcode.  Simple!
+Absolutely not! Just install the plugin, add your api username & api password in the settings and then use the shortcode [dudamobile_preview]  Simple!
 
 
 = Does this use all the API functions =
@@ -85,6 +85,14 @@ The best thing is to install an error log plugin and look at the error log.  If 
 
 
 == Changelog ==
+
+1.5.1
+
+* A big rewrite to make it a bit more user friendly.
+* Added ajax to the preview so it shows up without having to refresh
+* Added a new prettier form
+* Added mobile functionality - use the form on a phone and the mobile preview shows up instead of the comparison
+ 
 
 1.4.1
 
