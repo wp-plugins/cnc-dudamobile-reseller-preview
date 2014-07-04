@@ -2,9 +2,9 @@
 /**
  * Plugin Name: Duda Reseller API Plugin
  * Plugin URI: http://wordpress.org/plugins/cnc-dudamobile-reseller-preview/
- * Description: Create Dudamobile previews instantly
- * Version: 1.5.1
- * Author: Kevin Champlin
+ * Description: Create Dudamobile previews instantly without touching any code
+ * Version: 1.5.2
+ * Author: CNC Web Solutions - Kevin Champlin
  * Author URI: http://cncwebsolutions.com
  * License: GPL2
 
