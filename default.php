@@ -425,7 +425,6 @@ $(document).ready(function() {
 <div id="content2"></div>
 <div>
 <iframe id="content"></iframe>
-test content under iframe
 </div>
 <?php
 
