@@ -92,6 +92,7 @@ The best thing is to install an error log plugin and look at the error log.  If 
 * Added ajax to the preview so it shows up without having to refresh
 * Added a new prettier form
 * Added mobile functionality - use the form on a phone and the mobile preview shows up instead of the comparison
+* Added admin setting to turn the jquery link on or off. Some sites already include this link.
  
 
 1.4.1

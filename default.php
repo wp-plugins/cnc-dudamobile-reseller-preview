@@ -2,8 +2,8 @@
 /**
  * Plugin Name: Duda Reseller API Plugin
  * Plugin URI: http://wordpress.org/plugins/cnc-dudamobile-reseller-preview/
- * Description: Create Dudamobile previews instantly without touching any code
- * Version: 1.5.2
+ * Description: Create Dudamobile previews instantly
+ * Version: 1.5.1
  * Author: CNC Web Solutions - Kevin Champlin
  * Author URI: http://cncwebsolutions.com
  * License: GPL2
@@ -123,6 +123,11 @@ add_filter("plugin_action_links_$plugin", 'cnc_plugin_settings_duda' );
 	$duda_button_text = get_option('duda_button_text');
 
 	$duda_debug = get_option('duda_api_debug');
+	
+		$duda_debug = get_option('duda_jquery_toggle');
+
+	
+	
 
 	
 
@@ -331,9 +336,12 @@ color: #333;
 border: 0;
 }
 
-</style>   
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</style>  
 
+<?php if ($duda_jquery_toggle ==1)  { 
+echo '<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>';
+}
+?>
 <script type="text/javascript">
 $(document).ready(function() {
 	
@@ -414,7 +422,7 @@ $(document).ready(function() {
     <input name="website" type="text" id="website" placeholder="Enter Your Website"  />
     </label>
     <label>
-    <button class="submit_btn" id="submit_btn"><?=$duda_button_text; ?></button>
+    <button class="submit_btn" id="submit_btn"><?=$duda_button_text; ?></button> 
   </label>
 </fieldset>
 <div id="loading" style="display: none; margin:0 auto;">
@@ -476,6 +484,7 @@ $(document).ready(function() {
 
 	add_option('duda_api_debug','api debug','API Debug');
 
+	add_option('duda_jquery_toggle','jquery toggle','jquery toggle');
 
 
  }
@@ -497,6 +506,8 @@ $(document).ready(function() {
 	delete_option('duda_button_text');
 
 	delete_option('duda_api_debug');
+	
+	delete_option('duda_jquery_toggle');
 
 
 
@@ -667,6 +678,8 @@ if ($_REQUEST['duda_button_text']){
 	update_option('duda_api_debug',$_REQUEST['duda_api_debug']);
 
 
+	update_option('duda_jquery_toggle',$_REQUEST['duda_jquery_toggle']);
+
 
 
 
@@ -740,6 +753,9 @@ function print_duda_form(){
 
 	$duda_api_debug = get_option('duda_api_debug');
 
+	$duda_jquery_toggle = get_option('duda_jquery_toggle');
+
+
 
 
 	?>
@@ -760,12 +776,18 @@ This mobile preview is also saved in your Duda Reseller Dashboard.<br/>
   </label>
   <br/>
   <br/>
-  <label for"ap_debug">&nbsp;&nbsp;Debug:
+  <label for"jquery_toggle">&nbsp;&nbsp;Debug:
     <input name="duda_api_debug" type="radio" value="0" <?php if ($duda_api_debug ==0 || $duda_api_debug !=1) echo "checked=checked" ?>  />
     no
     <input type="radio" name ="duda_api_debug" value="1" <?php if ($duda_api_debug ==1) echo "checked=checked" ?> />
     yes </label>
   <br/>
+  <br/>
+  <label for"jquery_toggle">&nbsp;&nbsp;Use jQuery link:
+    <input name="duda_jquery_toggle" type="radio" value="0" <?php if ($duda_jquery_toggle ==0 || $duda_jquery_toggle !=1) echo "checked=checked" ?>  />
+    no
+    <input type="radio" name ="duda_jquery_toggle" value="1" <?php if ($duda_jquery_toggle ==1) echo "checked=checked" ?> />
+    yes </label>
   <br/>
   <input type ="submit" name ="submit" value=" Save " />
 </form>
