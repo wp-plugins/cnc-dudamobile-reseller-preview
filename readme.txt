@@ -8,7 +8,7 @@ Requires at least: 3.8
 
 Tested up to: 3.9
 
-Stable tag: 1.5.3
+Stable tag: 1.5.4
 
 License: GPLv2 or later
 
@@ -21,10 +21,12 @@ Add dudamobile previews on your wordpress page easy by using a shortcode.
 
 == Description ==
 
-This plugin is for dudamobile resellers that have API access. It allows you to enter your api username and api password in the settings.  Then you can use a shortcode to display the mobile preview on any page.
+This plugin is for dudamobile resellers that have API access for the mobile sites (not duda one). It allows you to enter your api username and api password in the settings.  Then you can use a shortcode to display the mobile preview on any page.
 
 
 All you need to make this work is to add the short code: [dudamobile_preview] to your page.  Remember to add your username and password under Settings in the admin.
+
+The duda one api plugin will be released sometime July 2014 as a seperate plugin.
 
 Features:
 
@@ -96,6 +98,11 @@ Yes! I truly spent a lot of time on this and would love a donation.  My paypal i
 
 
 == Changelog ==
+
+1.5.4
+
+* Bug fix: Changed file path to relative to avoid the CORS (cross-origin resource sharing) issue
+* Centered textbox and submt button; removed width on form
 
 1.5.3
 
