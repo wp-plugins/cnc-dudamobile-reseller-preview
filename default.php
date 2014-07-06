@@ -898,7 +898,6 @@ $(document).ready(function() {
 
 
 ?>
-
 <?php	
 
 
@@ -1651,4 +1650,3 @@ add_action('admin_menu','modify_menu');
 
 
 ?>
-
