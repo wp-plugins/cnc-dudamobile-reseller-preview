@@ -8,8 +8,7 @@ Requires at least: 3.8
 
 Tested up to: 3.9
 
-Stable tag: 1.5.4
-
+Stable tag: 1.5.5
 License: GPLv2 or later
 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -83,7 +82,6 @@ Yes! I truly spent a lot of time on this and would love a donation.  My paypal i
 
 
 
-
 == Screenshots ==
 
 1. Just add your username & password and save
@@ -98,6 +96,12 @@ Yes! I truly spent a lot of time on this and would love a donation.  My paypal i
 
 
 == Changelog ==
+
+1.5.5 
+* Removed jquery toggle - no longer needed as WP handles this
+* Cleanup: Removed deprecated functions
+* Cleanup: add jquery the WP way
+
 
 1.5.4
 
