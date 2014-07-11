@@ -18,7 +18,7 @@
 
 
 
- * Version: 1.5.5
+ * Version: 1.5.6
 
 
 
@@ -30,7 +30,7 @@
 
 
 
- * License: GPL2
+ * License: GPL2 
 
 
 
@@ -890,11 +890,12 @@ jQuery(document).ready(function( $ ) {
 
         {
 
+			$("#content").hide('fast');
 
-
-			 $('#loading').hide('fast');
-
-
+			$("#content2").show();
+			$('#loading').hide('fast');
+			$("#content2").html(errorThrown);
+			
 
 			 console.log("success" , arguments); // see all the parameters!
 

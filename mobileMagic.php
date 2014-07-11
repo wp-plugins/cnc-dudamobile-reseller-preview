@@ -13,7 +13,13 @@ if($_POST)
 {
     $duda_username = get_option('duda_api_username');
 	$duda_password = get_option('duda_api_password');
+	$duda_debug = get_option('duda_api_debug');
+	$admin_email = get_option('admin_email');
+    $headers = 'From: '.$user_Email.'' . "\r\n" . //remove this line if line above this is un-commented
+    'Reply-To: '.$user_Email.'' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
     
+//    
     //check if its an ajax request, exit if not
     if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
     
@@ -79,10 +85,14 @@ if($_POST)
 	$info = curl_getinfo($ch);
 		
 	if ($info['http_code'] != 200) {
-	//	print(".<br/>Error creating site.<br/><br/>");
-	//	print_r($output);
-	//	print_r($info);
+		if ($duda_debug ==1)
+		{
+		print(".<br/>Error creating site.<br/><br/>");
+		$sentMail = @mail($admin_email, "WP Duda Error - Error creating site", $output . $info, $headers); 
+		echo $output;
+		echo $info;
 	//	die();
+		}
 	}
 	
 	// Get result site name
@@ -92,7 +102,7 @@ if($_POST)
 //	echo "Site Created..<br/><br/>";		
 	
 	// Get Site
-//	echo "Getting site information....<br/>";
+//	echo "Getting site information....<br/>"; 
 	
 	$data = '';
 
@@ -110,10 +120,14 @@ if($_POST)
 	$info = curl_getinfo($ch);
 	
 	if ($info['http_code'] != 200) {
-	//	print("<br/>Error getting site data.<br/><br/>");
-	//	print_r($output);
-	//	print_r($info);
+		if ($duda_debug ==1)
+		{
+		print("<br/>Error getting site data.<br/><br/>");
+		$sentMail = @mail($admin_email, "WP Duda Error - Error getting site data.", $output . $info, $headers); 
+		echo $output;
+		echo $info;
 	//	die();
+		}
 	}
 	
 //	echo "Information Retrieved.<br/><br/>";

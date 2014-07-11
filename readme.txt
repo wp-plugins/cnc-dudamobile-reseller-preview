@@ -97,6 +97,11 @@ Yes! I truly spent a lot of time on this and would love a donation.  My paypal i
 
 == Changelog ==
 
+1.5.6
+* Added debug options back in, these were removed in a previous update
+
+
+
 1.5.5 
 * Removed jquery toggle - no longer needed as WP handles this
 * Cleanup: Removed deprecated functions
