@@ -8,13 +8,13 @@ Requires at least: 3.8
 
 Tested up to: 3.9
 
-Stable tag: 1.5.5
+Stable tag: 1.5.6
 License: GPLv2 or later
 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
-Add dudamobile previews on your wordpress page easy by using a shortcode.
+Add duda mobile previews on your wordpress page easily by using a shortcode.
 
 
 
@@ -36,7 +36,7 @@ Features:
 
 
 
-
+** Be sure to rate the plugin, if I know people like it i'll be sure to keep improving it: http://wordpress.org/plugins/cnc-dudamobile-reseller-preview/ ** 
 
 
 
@@ -79,6 +79,8 @@ The best thing is to install an error log plugin and look at the error log.  If 
 
 = This is awesome, can I send you a donation? =
 Yes! I truly spent a lot of time on this and would love a donation.  My paypal id is sales@cncwebsolutions.com  If you found this useful or better if it makes you money please don't forget about me :)
+Be sure to rate the plugin, if I know people like it i'll be sure to keep improving it: http://wordpress.org/plugins/cnc-dudamobile-reseller-preview
+
 
 
 
@@ -138,6 +140,7 @@ Yes! I truly spent a lot of time on this and would love a donation.  My paypal i
 1.4.1
 
 * removed a duplicate value in the embed code
+* if the latest & greatest doesn't work for you this is an oldie but goodie and will work
 
 
 = 1.4 =
@@ -202,6 +205,8 @@ Initial release
 * Settings page to add your api username & password.  Also turn debugging on and off.
 
 * Shortcode to add your mobile preview on any page [dudamobile_preview]
+
+* Change the button text to anything  you like
 
 
 
