@@ -101,6 +101,7 @@ Be sure to rate the plugin, if I know people like it i'll be sure to keep improv
 
 1.5.7
 * Fixed a CSS bug with the content area - some themes would show the form and then it would quickly disappear.  This has been resolved 
+* Also removed jquery from admin as its no longer needed as of version 1.5.5
 
 
 
