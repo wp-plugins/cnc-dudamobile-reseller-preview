@@ -90,7 +90,7 @@ Be sure to rate the plugin, if I know people like it i'll be sure to keep improv
 
 2. Textbox to type the website to convert
 
-3. Pretty comparison embedded in your site
+3. Pretty comparison embedded in your site 
 
 
 
@@ -99,42 +99,45 @@ Be sure to rate the plugin, if I know people like it i'll be sure to keep improv
 
 == Changelog ==
 
-1.5.7
+= 1.5.7 = 
+
 * Fixed a CSS bug with the content area - some themes would show the form and then it would quickly disappear.  This has been resolved 
 * Also removed jquery from admin as its no longer needed as of version 1.5.5
 
 
 
-1.5.6
+= 1.5.6 =
+
 * Added debug options back in, these were removed in a previous update
 
 
 
-1.5.5 
+= 1.5.5  =
+
 * Removed jquery toggle - no longer needed as WP handles this
 * Cleanup: Removed deprecated functions
 * Cleanup: add jquery the WP way
 
 
-1.5.4
+= 1.5.4 =
 
 * Bug fix: Changed file path to relative to avoid the CORS (cross-origin resource sharing) issue
 * Centered textbox and submt button; removed width on form
 
-1.5.3
+= 1.5.3 =
 
 * The iframe now loads when the mobile comparison is ready - saves on screen real estate this way.
 * Removed a lot of the design, this way it blends in with other templates better
  
 
-1.5.2
+= 1.5.2 =
 
 
 * Fixed jquery toggle 
 * Updated description
  
 
-1.5.1
+= 1.5.1 =
 
 * A big rewrite to make it a bit more user friendly.
 * Added ajax to the preview so it shows up without having to refresh
@@ -143,7 +146,7 @@ Be sure to rate the plugin, if I know people like it i'll be sure to keep improv
 * Added admin setting to turn the jquery link on or off. Some sites already include this link.
  
 
-1.4.1
+= 1.4.1 =
 
 * removed a duplicate value in the embed code
 * if the latest & greatest doesn't work for you this is an oldie but goodie and will work
