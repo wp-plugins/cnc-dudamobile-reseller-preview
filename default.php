@@ -1,7 +1,4 @@
 <?php
-
-
-
 /**
 
 
@@ -18,7 +15,7 @@
 
 
 
- * Version: 1.5.6
+ * Version: 1.5.7
 
 
 
@@ -511,7 +508,6 @@ add_filter("plugin_action_links_$plugin", 'cnc_plugin_settings_duda' );
 
 
 
-		$duda_jquery = get_option('duda_jquery_toggle');
 
 
 
@@ -662,7 +658,7 @@ jQuery(document).ready(function( $ ) {
 
 
 
-	$("#content").hide();
+	$("#content3").hide();
 
 
 
@@ -864,11 +860,11 @@ jQuery(document).ready(function( $ ) {
 
 
 
-				$("#content").show();
+				$("#content3").show();
 
 
 
-			    $("#content").attr("src",data.url);
+			    $("#content3").attr("src",data.url);
 
 
 
@@ -890,7 +886,7 @@ jQuery(document).ready(function( $ ) {
 
         {
 
-			$("#content").hide('fast');
+			$("#content3").hide('fast');
 
 			$("#content2").show();
 			$('#loading').hide('fast');
@@ -978,9 +974,9 @@ jQuery(document).ready(function( $ ) {
     <img src="<?= plugins_url('/cnc-dudamobile-reseller-preview/')?>images/loader.gif" style="vertical-align: middle;margin:0 auto;" /> Loading...
   </center>
 </div>
-<div id="content2"></div>
+<div id="content2"></div> 
 <div>
-  <iframe id="content"></iframe>
+  <iframe id="content3"></iframe>
 </div>
 <?php
 
@@ -1183,7 +1179,6 @@ jQuery(document).ready(function( $ ) {
 
 
 
-	add_option('duda_jquery_toggle','jquery toggle','jquery toggle');
 
 
 
@@ -1275,7 +1270,6 @@ jQuery(document).ready(function( $ ) {
 
 
 
-	delete_option('duda_jquery_toggle');
 
 
 
@@ -1941,7 +1935,6 @@ if ($_REQUEST['duda_button_text']){
 
 
 
-	update_option('duda_jquery_toggle',$_REQUEST['duda_jquery_toggle']);
 
 
 
@@ -2217,7 +2210,6 @@ function print_duda_form(){
 
 
 
-	$duda_jquery_toggle = get_option('duda_jquery_toggle');
 
 
 
@@ -2262,12 +2254,7 @@ This mobile preview is also saved in your Duda Reseller Dashboard.<br/>
     yes </label>
   <br/>
   <br/>
-  <label for"jquery_toggle">&nbsp;&nbsp;Use jQuery link:
-    <input name="duda_jquery_toggle" type="radio" value="0" <?php if ($duda_jquery_toggle ==0 || $duda_jquery_toggle !=1) echo "checked=checked" ?>  />
-    no
-    <input type="radio" name ="duda_jquery_toggle" value="1" <?php if ($duda_jquery_toggle ==1) echo "checked=checked" ?> />
-    yes </label>
-  <br/>
+  
   <input type ="submit" name ="submit" value=" Save " />
 </form>
 <br/>

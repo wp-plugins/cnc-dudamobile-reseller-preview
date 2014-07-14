@@ -8,7 +8,7 @@ Requires at least: 3.8
 
 Tested up to: 3.9
 
-Stable tag: 1.5.6
+Stable tag: 1.5.7
 License: GPLv2 or later
 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -98,6 +98,11 @@ Be sure to rate the plugin, if I know people like it i'll be sure to keep improv
 
 
 == Changelog ==
+
+1.5.7
+* Fixed a CSS bug with the content area - some themes would show the form and then it would quickly disappear.  This has been resolved 
+
+
 
 1.5.6
 * Added debug options back in, these were removed in a previous update
