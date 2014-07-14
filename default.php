@@ -1,5 +1,10 @@
 <?php
+
 /**
+
+
+
+
 
 
 
@@ -7,7 +12,15 @@
 
 
 
+
+
+
+
  * Plugin URI: http://wordpress.org/plugins/cnc-dudamobile-reseller-preview/
+
+
+
+
 
 
 
@@ -15,7 +28,15 @@
 
 
 
- * Version: 1.5.7
+
+
+
+
+ * Version: 1.5.8
+
+
+
+
 
 
 
@@ -23,11 +44,35 @@
 
 
 
+
+
+
+
  * Author URI: http://cncwebsolutions.com
 
 
 
+
+
+
+
  * License: GPL2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -51,7 +96,47 @@
 
 
 
+
+
+
+
+
+
+
+
  /*  Copyright 2014  CNC Web Solutions (email :kevin@cncwebsolutions.com)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -99,7 +184,39 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     it under the terms of the GNU General Public License, version 2, as 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -147,7 +264,55 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     This program is distributed in the hope that it will be useful,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -179,7 +344,39 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -227,7 +424,55 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     You should have received a copy of the GNU General Public License
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -259,7 +504,39 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -291,7 +568,39 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $pluginsURI = plugins_url('/cnc-dudamobile-reseller-preview/');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -315,7 +624,19 @@ $pluginsURI = plugins_url('/cnc-dudamobile-reseller-preview/');
 
 
 
+
+
+
+
+
+
+
+
 	wp_enqueue_style( 'cnc_css' );
+
+
+
+
 
 
 
@@ -323,14 +644,51 @@ $pluginsURI = plugins_url('/cnc-dudamobile-reseller-preview/');
 
 
 
+
+
+
+
 function cnc_scripts() {
+
  //  wp_deregister_script( 'jquery' );
+
     wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js');
+
     wp_enqueue_script( 'jquery' );
+
+
 
 }
 
+
+
 add_action( 'wp_enqueue_scripts', 'cnc_scripts' ); // wp_enqueue_scripts action hook to link only on the front-end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -364,7 +722,23 @@ function cnc_plugin_settings_duda($links) {
 
 
 
+
+
+
+
+
+
+
+
 	$settings_link = '<a href="options-general.php?page=cnc-dudamobile-reseller-preview/default.php">Settings</a>';
+
+
+
+
+
+
+
+
 
 
 
@@ -380,6 +754,14 @@ function cnc_plugin_settings_duda($links) {
 
 
 
+
+
+
+
+
+
+
+
 	return $links;
 
 
@@ -388,7 +770,23 @@ function cnc_plugin_settings_duda($links) {
 
 
 
+
+
+
+
+
+
+
+
 	
+
+
+
+
+
+
+
+
 
 
 
@@ -412,7 +810,31 @@ function cnc_plugin_settings_duda($links) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $plugin = plugin_basename(__FILE__); 
+
+
+
+
+
+
+
+
 
 
 
@@ -428,7 +850,31 @@ add_filter("plugin_action_links_$plugin", 'cnc_plugin_settings_duda' );
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -460,7 +906,39 @@ add_filter("plugin_action_links_$plugin", 'cnc_plugin_settings_duda' );
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -484,7 +962,23 @@ add_filter("plugin_action_links_$plugin", 'cnc_plugin_settings_duda' );
 
 
 
+
+
+
+
+
+
+
+
 	$duda_password = get_option('duda_api_password');
+
+
+
+
+
+
+
+
 
 
 
@@ -500,10 +994,52 @@ add_filter("plugin_action_links_$plugin", 'cnc_plugin_settings_duda' );
 
 
 
+
+
+
+
+
+
+
+
 	$duda_debug = get_option('duda_api_debug');
 
 
 
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
 	
 
 
@@ -515,19 +1051,20 @@ add_filter("plugin_action_links_$plugin", 'cnc_plugin_settings_duda' );
 
 
 
-	
-
-
-
-	
-
-
 
 
 
 
 
 	
+
+
+
+
+
+
+
+
 
 
 
@@ -543,7 +1080,23 @@ add_filter("plugin_action_links_$plugin", 'cnc_plugin_settings_duda' );
 
 
 
+
+
+
+
+
+
+
+
 		$duda_button_text = "create my mobile preview";
+
+
+
+
+
+
+
+
 
 
 
@@ -559,15 +1112,7 @@ add_filter("plugin_action_links_$plugin", 'cnc_plugin_settings_duda' );
 
 
 
-	
 
-
-
-
-
-
-
-	
 
 
 
@@ -576,6 +1121,54 @@ add_filter("plugin_action_links_$plugin", 'cnc_plugin_settings_duda' );
 
 
 	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -593,64 +1186,127 @@ add_filter("plugin_action_links_$plugin", 'cnc_plugin_settings_duda' );
 
 ?>
 
+
+
 <style>
+
 #website_form {
+
 	width: 100%;
+
 	margin-right: auto;
+
 	margin-left: auto;
+
 }
+
 #website_form legend {
+
 }
+
 #website_form label {
+
 }
+
 #website_form label span {
+
 	float: left;
+
 	width: 100px;
+
 	color: #666666;
+
 }
+
 #website_form input {
+
 }
+
 #website_form textarea {
+
 }
+
 .submit_btn {
+
 }
+
 .submit_btn:hover {
+
 }
+
 .success {
+
 	background: #CFFFF5;
+
 	padding: 10px;
+
 	margin-bottom: 10px;
+
 	border: 1px solid #B9ECCE;
+
 	border-radius: 5px;
+
 	font-weight: normal;
+
 }
+
 .error {
+
 	background: #FFDFDF;
+
 	padding: 10px;
+
 	margin-bottom: 10px;
+
 	border: 1px solid #FFCACA;
+
 	border-radius: 5px;
+
 	font-weight: normal;
+
 }
-iframe {
+
+#content3 { 
+
 	width: 960px;
+
 	height: 950px;
+
 	margin: 0 auto;
+
 	background-color: #FFF;
+
 	display: block;
+
 	margin-top: 30px;
+
 	border: none;
+
 }
+
 legend {
+
 }
+
 .centerCNC {
+
 	text-align: center;
+
 }
+
 .centerCNC > div { /* N.B. child combinators don't work in IE7 or less */
+
 	display: inline-block;
+
 }
+
 </style>
+
 <script type="text/javascript">
+
+
+
+
 
 
 
@@ -658,7 +1314,15 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
 	$("#content3").hide();
+
+
+
+
 
 
 
@@ -666,7 +1330,15 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
         //get input field values
+
+
+
+
 
 
 
@@ -674,7 +1346,15 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
         var user_website = $('input[name=website]').val(); 
+
+
+
+
 
 
 
@@ -682,11 +1362,23 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
         //simple validation at client's end
 
 
 
+
+
+
+
        
+
+
+
+
 
 
 
@@ -694,11 +1386,23 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
         if(user_website==""){ 
 
 
 
+
+
+
+
 		$('#loading').hide('fast');
+
+
+
+
 
 
 
@@ -706,7 +1410,15 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
             proceed = false;
+
+
+
+
 
 
 
@@ -714,11 +1426,23 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
 		
 
 
 
+
+
+
+
 		
+
+
+
+
 
 
 
@@ -726,7 +1450,15 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
    			 user_website = "http://"+user_website;
+
+
+
+
 
 
 
@@ -734,7 +1466,15 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
 		 var v = new RegExp(); 
+
+
+
+
 
 
 
@@ -742,7 +1482,15 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
 		if (!v.test(user_website)) { 
+
+
+
+
 
 
 
@@ -750,7 +1498,15 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
 			$('input[name=website]').css('border-color','red'); 
+
+
+
+
 
 
 
@@ -758,11 +1514,27 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
 		} 
 
 
 
+
+
+
+
        
+
+
+
+
+
+
+
+
 
 
 
@@ -774,25 +1546,51 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
         if(proceed) 
+
+
+
+
 
 
 
         {
 
+
+
  
+
+
 
 			<?php  
 
+
+
 			// remmoves the wp site domain to fix the CORS issue
+
+
 
 			//$wpurl = get_site_url();
 
+
+
 			$theurl = plugins_url('/cnc-dudamobile-reseller-preview/');
+
+
 
 			//$newurl = str_replace($wpurl,'',$theurl);
 
+
+
 			?>
+
+
+
+
 
 
 
@@ -800,7 +1598,15 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
 			$.ajax({                        
+
+
+
+
 
 
 
@@ -808,7 +1614,15 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
        		url: "<?= $theurl?>mobileMagic.php",
+
+
+
+
 
 
 
@@ -820,7 +1634,19 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
+
+
+
+
 			dataType: "json",
+
+
+
+
 
 
 
@@ -828,11 +1654,23 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
 				{
 
 
 
+
+
+
+
 			
+
+
+
+
 
 
 
@@ -840,7 +1678,15 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
 				window.location.href=data.preview;
+
+
+
+
 
 
 
@@ -848,11 +1694,23 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
 			
 
 
 
+
+
+
+
 			
+
+
+
+
 
 
 
@@ -860,7 +1718,15 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
 				$("#content3").show();
+
+
+
+
 
 
 
@@ -868,7 +1734,15 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
 				$('#loading').hide('fast');
+
+
+
+
 
 
 
@@ -876,7 +1750,15 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
 				},
+
+
+
+
 
 
 
@@ -884,16 +1766,33 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
         {
+
+
 
 			$("#content3").hide('fast');
 
+
+
 			$("#content2").show();
+
 			$('#loading').hide('fast');
+
 			$("#content2").html(errorThrown);
+
 			
 
+
+
 			 console.log("success" , arguments); // see all the parameters!
+
+
+
+
 
 
 
@@ -901,11 +1800,7 @@ jQuery(document).ready(function( $ ) {
 
 
 
-        }
 
-
-
-    });
 
 
 
@@ -913,7 +1808,39 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
     });
+
+
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -926,6 +1853,10 @@ jQuery(document).ready(function( $ ) {
 
 
     
+
+
+
+
 
 
 
@@ -933,7 +1864,15 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
     $("#website_form input").keyup(function() { 
+
+
+
+
 
 
 
@@ -941,7 +1880,15 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
         $("#result").slideUp();
+
+
+
+
 
 
 
@@ -949,7 +1896,15 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
     
+
+
+
+
 
 
 
@@ -957,27 +1912,52 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
 </script>
 
+
+
 <fieldset id="website_form" class="centerCNC">
+
   <label for="website">
+
     <input name="website" type="text" id="website" placeholder=" Enter Your Website"  />
+
   </label>
+
   <label>
+
     <button class="submit_btn" id="submit_btn">
+
     <?=$duda_button_text; ?>
+
     </button>
+
   </label>
+
 </fieldset>
+
 <div id="loading" style="display: none; margin:0 auto;">
+
   <center>
+
     <img src="<?= plugins_url('/cnc-dudamobile-reseller-preview/')?>images/loader.gif" style="vertical-align: middle;margin:0 auto;" /> Loading...
+
   </center>
+
 </div>
+
 <div id="content2"></div> 
+
 <div>
-  <iframe id="content3"></iframe>
+
+  <iframe id="content3" name="content3"></iframe>
+
 </div>
+
 <?php
 
 
@@ -1026,6 +2006,54 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
@@ -1042,7 +2070,24 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ?>
+
 <?php	
 
 
@@ -1059,7 +2104,55 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1099,7 +2192,31 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
+
+
+
+
  add_shortcode( 'dudamobile_preview', 'show_duda_stuff' );  // new shortcode - will be used moving forward
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1131,7 +2248,31 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   function set_duda_options()
+
+
+
+
+
+
+
+
 
 
 
@@ -1147,7 +2288,23 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
+
+
+
+
 	add_option('duda_api_username','api username goes here','API Username');
+
+
+
+
+
+
+
+
 
 
 
@@ -1163,6 +2320,14 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
+
+
+
+
 	add_option('duda_button_text','button text ','Button Text');
 
 
@@ -1171,7 +2336,34 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
+
+
+
+
 	add_option('duda_api_debug','api debug','API Debug');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1206,7 +2398,39 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1238,7 +2462,31 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  	delete_option('duda_api_username');
+
+
+
+
+
+
+
+
 
 
 
@@ -1254,7 +2502,23 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
+
+
+
+
 	delete_option('duda_button_text');
+
+
+
+
+
+
+
+
 
 
 
@@ -1266,7 +2530,30 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
 	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1309,6 +2596,30 @@ jQuery(document).ready(function( $ ) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 register_activation_hook(__FILE__,'set_duda_options');
 
 
@@ -1317,7 +2628,47 @@ register_activation_hook(__FILE__,'set_duda_options');
 
 
 
+
+
+
+
+
+
+
+
 register_deactivation_hook(__FILE__,'unset_duda_options');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1365,6 +2716,22 @@ function modify_menu(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		add_options_page(
 
 
@@ -1381,6 +2748,22 @@ function modify_menu(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 							'CNC Duda Preview',
 
 
@@ -1397,7 +2780,39 @@ function modify_menu(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 							'CNC Duda Preview',
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1429,7 +2844,39 @@ function modify_menu(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 							__FILE__,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1461,6 +2908,22 @@ function modify_menu(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 						);
 
 
@@ -1477,7 +2940,55 @@ function modify_menu(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1525,11 +3036,47 @@ function admin_duda_options(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	?>
+
 <div class="wrap">
+
   <h2>Duda Reseller API Options</h2>
+
   <hr/>
+
   <?php
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1561,7 +3108,39 @@ function admin_duda_options(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		update_duda_options();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1593,6 +3172,22 @@ function admin_duda_options(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	print_duda_form();
 
 
@@ -1609,8 +3204,26 @@ function admin_duda_options(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     ?>
+
 </div>
+
 <?php	
 
 
@@ -1627,7 +3240,55 @@ function admin_duda_options(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1675,7 +3336,55 @@ function update_duda_options(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $ok = false;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1723,7 +3432,39 @@ if ($_REQUEST['duda_api_username']){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	update_option('duda_api_username',$_REQUEST['duda_api_username']); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1755,7 +3496,55 @@ if ($_REQUEST['duda_api_username']){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1803,7 +3592,39 @@ if ($_REQUEST['duda_api_password']){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	update_option('duda_api_password',$_REQUEST['duda_api_password']);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1835,7 +3656,39 @@ if ($_REQUEST['duda_api_password']){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1867,7 +3720,39 @@ if ($_REQUEST['duda_button_text']){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	update_option('duda_button_text',$_REQUEST['duda_button_text']);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1899,7 +3784,47 @@ if ($_REQUEST['duda_button_text']){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1978,6 +3903,61 @@ if ($_REQUEST['duda_button_text']){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	if($ok){
 
 
@@ -1994,10 +3974,30 @@ if ($_REQUEST['duda_button_text']){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		?>
+
 <div id="message" class="updated fade">
+
   <p>Options saved.</p>
+
 </div>
+
 <?php
 
 
@@ -2014,7 +4014,39 @@ if ($_REQUEST['duda_button_text']){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2046,6 +4078,22 @@ if ($_REQUEST['duda_button_text']){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	{
 
 
@@ -2062,11 +4110,47 @@ if ($_REQUEST['duda_button_text']){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		?>
+
 <div id="message" class="updated fade">
+
   <p>Failed to save options.</p>
+
 </div>
+
 <?php
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2098,6 +4182,22 @@ if ($_REQUEST['duda_button_text']){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		
 
 
@@ -2114,7 +4214,71 @@ if ($_REQUEST['duda_button_text']){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2178,7 +4342,31 @@ function print_duda_form(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	$duda_api_username =  get_option('duda_api_username');
+
+
+
+
+
+
+
+
 
 
 
@@ -2194,7 +4382,23 @@ function print_duda_form(){
 
 
 
+
+
+
+
+
+
+
+
 	$duda_button_text = get_option('duda_button_text');
+
+
+
+
+
+
+
+
 
 
 
@@ -2229,49 +4433,134 @@ function print_duda_form(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	?>
+
 This will create a form allow users to submit their url and then generates a mobile preview. <br/>
+
 This mobile preview is also saved in your Duda Reseller Dashboard.<br/>
+
 <br/>
+
 <form action="options-general.php?page=cnc-dudamobile-reseller-preview/default.php" method="post">
+
   <label for"api_username">API Username:
+
     <input type="text" name="duda_api_username" value="<?=$duda_api_username?>" />
+
   </label>
+
   <br/>
+
   <label for"api_password">&nbsp;&nbsp;API Password:
+
     <input type="text" name="duda_api_password" value="<?=$duda_api_password?>" />
+
   </label>
+
   <br/>
+
   <label for"duda_button_text">&nbsp;&nbsp;Button Text:
+
     <input   name="duda_button_text" type="text" value="<?=$duda_button_text?>" size="50" />
+
   </label>
+
   <br/>
+
   <br/>
+
   <label for"jquery_toggle">&nbsp;&nbsp;Debug:
+
     <input name="duda_api_debug" type="radio" value="0" <?php if ($duda_api_debug ==0 || $duda_api_debug !=1) echo "checked=checked" ?>  />
+
     no
+
     <input type="radio" name ="duda_api_debug" value="1" <?php if ($duda_api_debug ==1) echo "checked=checked" ?> />
+
     yes </label>
+
   <br/>
+
   <br/>
+
   
+
   <input type ="submit" name ="submit" value=" Save " />
+
 </form>
+
 <br/>
+
 <br/>
+
 <hr/>
+
 If you found this plugin useful please consider donating.
+
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+
   <input type="hidden" name="cmd" value="_s-xclick">
+
   <input type="hidden" name="hosted_button_id" value="J5RLUBJ9CFP4E">
+
   <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+
   <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+
 </form>
+
 <br/>
+
 <br/>
+
 If you need hosting, domains, design or custom programming <a href="mailto:kevin@cncwebsolutions.com">contact us</a><br/>
+
 <strong><a href="http://cncwebsolutions.com/1-web-hosting/" target="_blank">WordPress hosting starting at just $1.</a></strong>
+
 <?php
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2303,6 +4592,22 @@ If you need hosting, domains, design or custom programming <a href="mailto:kevin
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 
 
@@ -2319,7 +4624,54 @@ If you need hosting, domains, design or custom programming <a href="mailto:kevin
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 add_action('admin_menu','modify_menu');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

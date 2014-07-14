@@ -8,7 +8,7 @@ Requires at least: 3.8
 
 Tested up to: 3.9
 
-Stable tag: 1.5.7
+Stable tag: 1.5.8
 License: GPLv2 or later
 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -98,6 +98,12 @@ Be sure to rate the plugin, if I know people like it i'll be sure to keep improv
 
 
 == Changelog ==
+
+= 1.5.8 = 
+
+* Fixed a CSS bug if you had existing iframes on the site
+
+
 
 = 1.5.7 = 
 
