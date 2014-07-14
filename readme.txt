@@ -101,7 +101,7 @@ Be sure to rate the plugin, if I know people like it i'll be sure to keep improv
 
 = 1.5.8 = 
 
-* Fixed a CSS bug if you had existing iframes on the site
+* Fixed a CSS bug if you had existing iframes on the site 
 
 
 
