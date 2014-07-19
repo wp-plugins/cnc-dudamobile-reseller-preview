@@ -6,6 +6,7 @@
  * Version: 1.5.10
  * Author: Kevin Champlin
  * Author URI: http://kevinchamplin.com
+ * Donate link: http://www.kevinchamplin.com/wordpress-plugins/
  * License: GPL2 
  */
  /*  Copyright 2014  Kevin Champlin(email :kevinchamplin.com)
