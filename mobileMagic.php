@@ -1,14 +1,9 @@
 <?php
-
 $path = $_SERVER['DOCUMENT_ROOT'];
-
 include_once $path . '/wp-config.php';
 include_once $path . '/wp-load.php';
 include_once $path . '/wp-includes/wp-db.php';
 include_once $path . '/wp-includes/pluggable.php';
-
-
-
 if($_POST)
 {
     $duda_username = get_option('duda_api_username');
@@ -39,7 +34,6 @@ if($_POST)
         $output = json_encode(array('type'=>'error', 'text' => 'Input fields are empty!'));
         die($output);
     }
-
     //Sanitize input data using PHP filter_var().
     $user_Website        = filter_var($_POST["userWebsite"], FILTER_SANITIZE_STRING);
     
@@ -49,11 +43,9 @@ if($_POST)
         $output = json_encode(array('type'=>'error', 'text' => 'Name is too short or empty!'));
         die($output);
     }
-
     
     
  
-
 //---------------------------------------------------------------------------------------
 	
 	// Create Site
@@ -68,7 +60,6 @@ if($_POST)
 			}
 		}
 	';
-
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, 'https://api.dudamobile.com/api/sites/create');
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -105,7 +96,6 @@ if($_POST)
 //	echo "Getting site information....<br/>"; 
 	
 	$data = '';
-
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, 'https://api.dudamobile.com/api/sites/'.$siteName);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -141,13 +131,6 @@ if($_POST)
 //	echo "Before/After URL:".$beforeAfterUrl."<br/>";
 	
 	curl_close($ch);
-?>
-
-
-	
-
-
-<?php
 
  echo json_encode(array("url" => $beforeAfterUrl, "preview" => $previewUrl ));
  } ?>

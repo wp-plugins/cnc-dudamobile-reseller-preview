@@ -8,7 +8,7 @@ Requires at least: 3.8
 
 Tested up to: 3.9
 
-Stable tag: 1.5.9
+Stable tag: 1.5.10
 License: GPLv2 or later
 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -98,6 +98,15 @@ Be sure to rate the plugin, if I know people like it i'll be sure to keep improv
 
 
 == Changelog ==
+
+= 1.5.10 = 
+
+* Just changed company/author info.  Contact me directly as my team and support are unaware of my special wordpress projects
+
+= 1.5.9 = 
+
+* Fixed a PHP bug
+
 
 = 1.5.8 = 
 
