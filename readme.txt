@@ -2,7 +2,7 @@
 
 Contributors: cnckevin
 
-Tags: dudamobile, reseller
+Tags: dudamobile, reseller, duda, dudaone
 
 Requires at least: 3.8
 
@@ -35,7 +35,14 @@ Features:
 * Design - design was minimal so it uses your templates css
 
 
-** Duda One Plugin is now available at http://cncwebsolutions.com/duda-one-wordpress-plugin/ **
+Our Duda One Plugin is now available at http://cncwebsolutions.com/duda-one-wordpress-plugin/. This plugin will:
+
+* Display the duda one designs on your website
+* Allow the user to enter their website (optional) and email address
+* Create the duda one website
+* Create the user account
+* Assign the user account to the website
+* Direct the user to the online editor to start editing their new multi-screen site
 
 
 
