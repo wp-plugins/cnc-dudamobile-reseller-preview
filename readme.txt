@@ -35,8 +35,7 @@ Features:
 * Design - design was minimal so it uses your templates css
 
 
-
-** Be sure to rate the plugin, if I know people like it i'll be sure to keep improving it: http://wordpress.org/plugins/cnc-dudamobile-reseller-preview/ ** 
+** Duda One Plugin is now available at http://cncwebsolutions.com/duda-one-wordpress-plugin/ **
 
 
 
@@ -76,6 +75,9 @@ Not yet, this only creates the mobile comparison preview.  I will add more featu
 
 = It just isn't working, what can I do? =
 The best thing is to install an error log plugin and look at the error log.  If you have an error log you can send it to kevin@cncwebsolutions.com
+
+= Does this work with Duda One also? =
+No this is only for duda mobile.  You can view our duda one plugin here: http://cncwebsolutions.com/duda-one-wordpress-plugin/
 
 = This is awesome, can I send you a donation? =
 Yes! I truly spent a lot of time on this and would love a donation.  My paypal id is sales@cncwebsolutions.com  If you found this useful or better if it makes you money please don't forget about me :)
