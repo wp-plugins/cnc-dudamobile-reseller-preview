@@ -3,7 +3,7 @@
  * Plugin Name: Duda Mobile Reseller API Plugin
  * Plugin URI: http://wordpress.org/plugins/cnc-dudamobile-reseller-preview/
  * Description: Create duda mobile previews quickly without any programming
- * Version: 1.5.10
+ * Version: 1.5.11
  * Author: Kevin Champlin
  * Author URI: http://kevinchamplin.com
  * Donate link: http://www.kevinchamplin.com/wordpress-plugins/
@@ -2846,19 +2846,11 @@ This mobile preview is also saved in your Duda Reseller Dashboard.<br/>
 
 <hr/>
 
-If you found this plugin useful please consider donating.
+This plugin will have limited support after 8/5/14 as new plugin will be released that will encompass all the features here and offer many</br>
+new features.  Support for all our plugins can be found here: https://cncwebsolutions.com/Projects/forum/wordpress-plugins/<br/><br/>
+Get ready for our new DudaPro Plugin launching 8/5/14!  We will have a lite and paid version, more details coming soon!
 
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 
-  <input type="hidden" name="cmd" value="_s-xclick">
-
-  <input type="hidden" name="hosted_button_id" value="J5RLUBJ9CFP4E">
-
-  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-
-  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-
-</form>
 
 <br/>
 
@@ -2866,7 +2858,7 @@ If you found this plugin useful please consider donating.
 
 If you need hosting, domains, design or custom programming <a href="mailto:kevin@cncwebsolutions.com">contact us</a><br/>
 
-<strong><a href="http://cncwebsolutions.com/1-web-hosting/" target="_blank">WordPress hosting starting at just $1.</a></strong>
+<strong><a href="https://cncwebsolutions.com/free-wordpress-hosting/" target="_blank">Free WordPress Hosting with instant stetup!</a></strong>
 
 <?php
 

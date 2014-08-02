@@ -8,7 +8,7 @@ Requires at least: 3.8
 
 Tested up to: 3.9
 
-Stable tag: 1.5.10
+Stable tag: 1.5.11
 License: GPLv2 or later
 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -33,16 +33,19 @@ Features:
 * AJAX - preview loads without the page reloading
 * Mobile - view the form on your moible device and see the mobile site (not the comparison)
 * Design - design was minimal so it uses your templates css
+* Support - For support request please use this forum: https://cncwebsolutions.com/Projects/forum/wordpress-plugins/
 
+A DudaPro Plugin will be released on 8/5/14. This new plugin will eventually replace the mobile plugin here as it  will do the same thing and more.
 
-Our Duda One Plugin is now available at http://cncwebsolutions.com/duda-one-wordpress-plugin/. This plugin will:
+DudaPro Plugin will offer:
 
-* Display the duda one designs on your website
-* Allow the user to enter their website (optional) and email address
-* Create the duda one website
-* Create the user account
-* Assign the user account to the website
-* Direct the user to the online editor to start editing their new multi-screen site
+* Admin Widget
+* Site Analytics for all your sites
+* Multi-Screen Support
+* Mobile Comparison
+* Mobile Preview
+* List all accounts and show their previw links
+* and more!
 
 
 
