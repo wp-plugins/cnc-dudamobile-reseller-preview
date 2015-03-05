@@ -52,7 +52,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 /* hook updater to init */
 
-add_action( 'init', 'cnc_dudapro_plugin_updater_init' );
+//add_action( 'init', 'cnc_dudapro_plugin_updater_init' );
 
 
 
