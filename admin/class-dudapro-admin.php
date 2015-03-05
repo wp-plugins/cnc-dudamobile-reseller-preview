@@ -1510,7 +1510,7 @@ $params = array(
 
 $arr_extra_cols[0] = array(1,'<input type="checkbox" id="ct_check_all" name="ct_check_all" onclick="checkAllLeads();" />','20','<input type="checkbox" id="ct_check" name="ct_check[]" value="#COL1#" onclick="check();" />');  // column, header, width, html
 
-//$arr_extra_cols[1] = array(7,'Actions','45','<a href=""  ><img src="' . plugins_url('dudapro') . '/admin/images/icon-delete.gif" id="#COL1#"  class="del"/></a>');  // column, header, width, html
+//$arr_extra_cols[1] = array(7,'Actions','45','<a href=""  ><img src="' . plugins_url('cnc-dudamobile-reseller-preview') . '/admin/images/icon-delete.gif" id="#COL1#"  class="del"/></a>');  // column, header, width, html
 
 $params['extra_cols'] = $arr_extra_cols;
 
@@ -2001,7 +2001,7 @@ $arr_extra_cols[0] = array(1,'<input type="checkbox" id="ct_check_all" name="ct_
 
 
 
-//$arr_extra_cols[1] = array(9,'Actions','45','<a href="javascript: funcEdit(\'#COL4#\');"><img src="' . plugins_url('dudapro') . '/admin/images/icon-edit.gif" /></a>  <a href=""  ><img src="' . plugins_url('dudapro') . '/admin/images/icon-delete.gif" id="#COL1#"  class="del"/></a>');  // column, header, width, html
+//$arr_extra_cols[1] = array(9,'Actions','45','<a href="javascript: funcEdit(\'#COL4#\');"><img src="' . plugins_url('cnc-dudamobile-reseller-preview') . '/admin/images/icon-edit.gif" /></a>  <a href=""  ><img src="' . plugins_url('cnc-dudamobile-reseller-preview') . '/admin/images/icon-delete.gif" id="#COL1#"  class="del"/></a>');  // column, header, width, html
 
 $params['extra_cols'] = $arr_extra_cols;
 
@@ -2247,7 +2247,7 @@ $arr_extra_cols[0] = array(1,'<input type="checkbox" id="ct_check_all" name="ct_
 
 
 
-//$arr_extra_cols[1] = array(9,'Actions','45','<a href="javascript: funcEdit(\'#COL4#\');"><img src="' . plugins_url('dudapro') . '/admin/images/icon-edit.gif" /></a>  <a href=""  ><img src="' . plugins_url('dudapro') . '/admin/images/icon-delete.gif" id="#COL1#"  class="del"/></a>');  // column, header, width, html
+//$arr_extra_cols[1] = array(9,'Actions','45','<a href="javascript: funcEdit(\'#COL4#\');"><img src="' . plugins_url('cnc-dudamobile-reseller-preview') . '/admin/images/icon-edit.gif" /></a>  <a href=""  ><img src="' . plugins_url('cnc-dudamobile-reseller-preview') . '/admin/images/icon-delete.gif" id="#COL1#"  class="del"/></a>');  // column, header, width, html
 
 $params['extra_cols'] = $arr_extra_cols;
 

@@ -1479,7 +1479,7 @@ jQuery(document).ready(function( $ ) {
 
 		    {
 
-		        url : "<?= plugins_url('dudapro')?>/includes/mobile/mobileMagic.php",
+		        url : "<?= plugins_url('cnc-dudamobile-reseller-preview')?>/includes/mobile/mobileMagic.php",
 
 		        type: "POST",
 
@@ -1650,7 +1650,7 @@ $dudapro_mobile_form = '
 
 
 
-    <img src="' . plugins_url('dudapro') . '/images/loader.gif" style="vertical-align: middle;margin:0 auto;" />
+    <img src="' . plugins_url('cnc-dudamobile-reseller-preview') . '/images/loader.gif" style="vertical-align: middle;margin:0 auto;" />
 
 
 
@@ -4438,7 +4438,7 @@ public function show_stripe(){
 
 
 
-//	require_once(plugins_url('dudapro') .'includes/Stripe.php');
+//	require_once(plugins_url('cnc-dudamobile-reseller-preview') .'includes/Stripe.php');
 
 //Stripe::setApiKey("sk_test_4R4oVDP3hxFbo3DGbQM6zahR");
 
@@ -4462,7 +4462,7 @@ $stripeform = '<div id="stripeform" style="text-align:left;"><form action="" met
 
     data-description="($'. ($mobilemonthly/100) . '/month + $'. ($mobilesetup/100) . ' setup)"
 
-    data-image="'. plugins_url('dudapro') .'/images/mobile-product.png">
+    data-image="'. plugins_url('cnc-dudamobile-reseller-preview') .'/images/mobile-product.png">
 
   </script>
 
