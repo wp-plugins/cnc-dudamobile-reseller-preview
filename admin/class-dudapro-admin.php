@@ -987,137 +987,6 @@ $my_top_page->apply_settings( array(
 
 
 
-// Mobile Accounts
-
-$my_sub_page = create_settings_page(
-
-
-
-  'dudapro-mobile-accts',
-
-
-
-  __( 'Mobile' ),
-
-
-
-  array(
-
-
-
-    'parent'   => 'dudapro',
-
-
-
-    'title'    => __( 'Mobile Accounts' )
-
-
-
-	
-
-
-
-  ),
-
-
-
-  array(
-
-
-
-
-    'dudapro_license_settings' => array(
-
-
-
-      'title'       => __( 'Duda Mobile Accounts' ),
-
-
-
-      'description' => __( $this->show_mobile() ),
-
-
-
-	    
-
-
-
-	   )
-
-
-
-	  )
-
-
-
-  );
-
-
-
-// Multiscreen Accounts
-
-$my_sub_page = create_settings_page(
-
-
-
-  'dudapro-multiscreen-accts',
-
-
-
-  __( 'Multiscreen' ),
-
-
-
-  array(
-
-
-
-    'parent'   => 'dudapro',
-
-
-
-    'title'    => __( 'Multiscreen Accounts' )
-
-
-
-	
-
-
-
-  ),
-
-
-
-  array(
-
-
-
-    'dudapro_license_settings' => array(
-
-
-
-      'title'       => __( 'Duda One Accounts' ),
-
-
-
-      'description' => __( $this->show_multiscreen() ),
-
-
-
-	    
-
-
-
-	   )
-
-
-
-	  )
-
-
-
-  );
-
 
 
 
@@ -1280,7 +1149,7 @@ public function dudapro_show_help()
 	
 	
 	
-$helpFeed .= "<h2><a href=\"http://programminggenius.com/dudapro-for-wordpress/\">Go Premium</a> and unlock more great features such as capturing leads and accepting payments from your clients!</h2> ";
+$helpFeed .= "<h2><a href=\"http://programminggenius.com/dudapro-for-wordpress/\">Go Premium</a> and unlock more great features such as capturing leads and accepting payments from your clients!</h2><br/><br/> ";
 
 $helpFeed .= "<h2>Quick Start</h2> ";
 
@@ -1308,7 +1177,6 @@ $helpFeed .= '<h2>Instructions</h2>
 
 <li>Go to the Duda Pro Settings page
 
-<li>Enter your license key  on the<strong> Licence Key tab</strong> you received from CNC Web Solutions (it was emailed to you when you purchased the plugin)</li>
 
 <li>Enter your Duda API Settings on the <strong>API Settings Tab. <span style="color: #ff0000;">All fields are required.</span></strong></li>
 
@@ -1320,37 +1188,19 @@ $helpFeed .= '<h2>Instructions</h2>
 
 <li>Enter your <strong>Multi-Screen Options</strong> on that tab</li>
 
-<li>Configure Stripe or Paypal depending on which one you use (optional). Only required if you chose to Enable Payments on the General Options Tab.</li>
 
-<li><strong>Go to Duda and configure your custom mobile payment page</strong> and text (<a href="https://www.youtube.com/watch?v=7dMTYFTTjwM" target="_blank">View video</a>).  **Important with this step your cannot receive payments or have users publish mobile site). On duda&#8217;s site click on Account API Access -&gt; Edit Publish Page (on bottom of page).  Then put in your order page on both tabs (mobile site &amp; responsive site). Check the option that says &#8220;Redirect without publish&#8221;. This way it will redirect to your site and it won&#8217;t publish the site and charge you until you get payment from your client.</li>
 
 </ol>
 
 </li>
 
-</ol><br/>';
+</ol><br/><br/>';
+
+
+$helpFeed .= "<h2><a href=\"http://programminggenius.com/dudapro-for-wordpress/\">Go Premium</a> and unlock more great features such as capturing leads and accepting payments from your clients!</h2><br/><br/> ";
 
 
 
-
-
-$helpFeed .= '<h2>Videos</h2>
-
-<ul>
-
-<li>Admin Quick Start – <a href="http://youtu.be/B2vfWgQDOrc" target="_blank">http://youtu.be/B2vfWgQDOrc</a></li>
-
-<li>Mobile Tutorial – <a href="http://youtu.be/CTwJr7MvLI" target="_blank">http://youtu.be/CTwJr7MvLIc</a></li>
-
-<li>Mobile Pay Flow – <a href="http://youtu.be/7dMTYFTTjwM" target="_blank">http://youtu.be/7dMTYFTTjwM</a></li>
-
-</ul><br/>';
-
-
-
-$helpFeed .= '<h2>Support and Feature Requests</h2>
-
-If you need help or would like a quote for a customizatio please <a href="http://programminggenius.com/contact-us/" target="_blank">contact Kevin</a>.';
 
 
 
