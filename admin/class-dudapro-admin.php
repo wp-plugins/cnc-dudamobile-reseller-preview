@@ -355,25 +355,6 @@ $my_top_page = create_settings_page(
   ),
 
 
-
- array(
-
-
-
-    'dudapro_license_settings' => array(
-
-
-
-      'title'       => __( 'News & Updates' ),
-
-
-
-      'description' => __( $this->dudapro_welcome()),
-
-	   )
-
-	  ),
-
 	  array(
 
     'tabs'        => true,
