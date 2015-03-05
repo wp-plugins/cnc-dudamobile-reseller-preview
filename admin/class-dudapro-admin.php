@@ -96,19 +96,11 @@
 
  	require_once( plugin_dir_path( __FILE__ ) . 'includes/wm-settings/wm-settings.php' );
 
-
-
-
-
-
-
-
-
 	include_once(ABSPATH . WPINC . '/rss.php');
 
-	
 
-	
+
+
 
 class DudaPro_Admin {
 
@@ -306,6 +298,12 @@ class DudaPro_Admin {
 
 
 
+//		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
+
+
+
+		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
+
 
 
 	
@@ -355,6 +353,15 @@ $my_top_page = create_settings_page(
   ),
 
 
+
+ array(
+
+
+
+ 
+
+	  ),
+
 	  array(
 
     'tabs'        => true,
@@ -394,6 +401,10 @@ $my_top_page = create_settings_page(
 
 
 $my_top_page->apply_settings( array(
+
+
+
+   
 
 
 
@@ -541,7 +552,7 @@ $my_top_page->apply_settings( array(
 
 
 
-		'description' => __( 'General site options.' ),
+		'description' => __( 'Unlock more options by <a href="http://programminggenius.com/dudapro-for-wordpress/">going premium!</a>' ),
 
 
 
@@ -595,12 +606,13 @@ $my_top_page->apply_settings( array(
 
 
 
-        'description' => __( 'The full path to your client login page, where you put the multi-screen user list shortcode: <pre>[dudapro_client_login]</pre> Ex: http://mysite.com/my-web-sites   This will display a login for users to login and upon logging in they will see their mobile & d1 sites listed. Clicking on the links will take them to the editor for the that site. ' )
+        'description' => __( 'The full path to your multi-screen list page (where you put the client login shortcode. Ex: http://mysite.com/my-web-sites' )
 
 
 
       	),
 
+		
 
 	
 
@@ -608,21 +620,15 @@ $my_top_page->apply_settings( array(
 
 		
 
-
-
       
 
-		
 
-		)
+
+	  )
 
 
 
       ),
-
-	  
-
-	  
 
 
 
@@ -634,7 +640,7 @@ $my_top_page->apply_settings( array(
 
 
 
-		'description' => __( 'Mobile site options.' ),
+		'description' => __( 'Unlock more options by <a href="http://programminggenius.com/dudapro-for-wordpress/">going premium!</a>' ),
 
 
 
@@ -701,7 +707,7 @@ $my_top_page->apply_settings( array(
 
 
 
-        'description' => __( 'Text to Display on the mobile creation button' )
+        'description' => __( 'Text to Display on the mobile button' )
 
 
 
@@ -815,13 +821,7 @@ $my_top_page->apply_settings( array(
 
 
 
-        ),
-
-		
-
-		        'default' => '1'
-
-
+        )
 
 
 
@@ -865,7 +865,7 @@ $my_top_page->apply_settings( array(
 
 
 
-		'description' => __( 'Payment options are not used yet for multiscreen sites, duda does not have a payment flow for this.  However CNC is exploring various options to allow payment.  If you have an idea please contact <a href="kevin@programminggenius.com">kevin@programminggenius.com</a>' ),
+		'description' => __( 'Unlock more options by <a href="http://programminggenius.com/dudapro-for-wordpress/">going premium!</a>' ),
 
 
 
@@ -892,6 +892,8 @@ $my_top_page->apply_settings( array(
       ),
 
 
+
+		
 
 
 
@@ -955,7 +957,23 @@ $my_top_page->apply_settings( array(
 
 
 
+
+  
+
+
+
+
+
   ),
+
+
+
+  
+
+
+
+
+
 
 
 )
@@ -971,6 +989,16 @@ $my_top_page->apply_settings( array(
 
 
 
+
+
+
+
+// view leads
+
+
+
+
+// And a sub-page
 
 
 
@@ -1002,39 +1030,11 @@ $my_sub_page = create_settings_page(
 
 
 
-  ),
+  )
 
 
 
-  array(
-
-
-
-    'dudapro_help_settings' => array(
-
-
-
-      'title'       => __( 'Help & FAQ' ),
-
-
-
-      'description' => __( $this->dudapro_show_help()  ),
-
-
-
-	    
-
-
-
-	   )
-
-
-
-	  )
-
-
-
-  );
+   );
 
 
 
@@ -1120,172 +1120,140 @@ $my_value = get_setting( 'my_setting_id', 'my_option_name' );
 
 	}
 
-	
-
-	
-
-public function dudapro_show_help()
-
-{
-	
-	
-	
-$helpFeed .= "<h2><a href=\"http://programminggenius.com/dudapro-for-wordpress/\">Go Premium</a> and unlock more great features such as capturing leads and accepting payments from your clients!</h2><br/><br/> ";
-
-$helpFeed .= "<h2>Quick Start</h2> ";
-
-$helpFeed .= 'This plugin includes 3 shortcodes. These shortcodes are listed below:<br/>';
-
-$helpFeed .= '
-
-<strong>Mobile Page</strong> - Displays mobile preview and links to your branded editor: <code>[dudapro_mobile]</code>
-
-<strong>Multi-Screen Page</strong> - Displays Duda One templates and allows sites to be created: <code>[dudapro_multisite]</code>
-
-<strong>Client Login Page</strong>e - Displays the logged in users D1 sites and lins to the editor (automatically logs them into your editor: <code>[dudapro_client_login]</code>
-
-<br/>';	
-
-	
 
 	
 
 
-
-$helpFeed .= '<h2>Instructions</h2>
-
-<ol>
-
-<li>Go to the Duda Pro Settings page
-
-
-<li>Enter your Duda API Settings on the <strong>API Settings Tab. <span style="color: #ff0000;">All fields are required.</span></strong></li>
-
-<li><span style="color: #000000;"><strong>Create 3 new WordPress pages</strong> and on each one place a shortcode on them, 1 page for each shortcode. (see shortcodes above)</span></li>
-
-<li><strong>General Options</strong> tab enter all the fields, the Mobile List Page, Multi-Screen List Page and Payment Page willl contain the full urls from the pages you created in step 3.</li>
-
-<li>Enter your Mobile Options on that tab</li>
-
-<li>Enter your <strong>Multi-Screen Options</strong> on that tab</li>
-
-
-
-</ol>
-
-</li>
-
-</ol><br/><br/>';
-
-
-$helpFeed .= "<h2><a href=\"http://programminggenius.com/dudapro-for-wordpress/\">Go Premium</a> and unlock more great features such as capturing leads and accepting payments from your clients!</h2><br/><br/> ";
-
-
-
-
-
-
-
-
-
-
-return $helpFeed;
-
-}
-
-
-
-public function dudapro_magicquotes_check()
-
-{
-
-	if (get_magic_quotes_gpc() ==1)
-
-	{
-
-		return 'on, this sometimes causes issues. If you get errors contact support and tell them Magic Quotes is on.';
-
-	}
-
-	else 
-
-	{
-
-		return 'off. This is a good thing as it causes conflicts with some plugins.'; 
-
-	}
-
-
-
-}
-
-
-
-	
 
 	public function cnc_dudapro_show_leads()
 
+
+
 	{
 
+
+
 		
+
+
 
 global $wpdb;
 
 
 
+
+
+
+
 /*	$res = $wpdb->get_results("SELECT email, url, lead, time as times FROM ". $wpdb->prefix . "cnc_dudapro");
 
+
+
 	$tbl = '<table  border="1" cellpadding="3" cellspacing="0">';
+
+
 
 				$tbl .= '<tr style="color:#FFF;background-color:#000;"><td>Email Address</td><td> URL </td><td> Product</td><td>  Date</tr>';
 
 
 
+
+
+
+
 		foreach ($res as $rs) 
+
+
 
 			{
 
+
+
 				
+
+
 
 			$tbl .= '<tr bgcolor="#FFF"><td>'.	$rs->email . '</td><td> ' . $rs->url . ' </td><td>  ' . $rs->lead . '</td><td>  ' . $rs->times . '</tr>';
 
+
+
 			}
 
+
+
 				$tbl .= '</table>';
+
+
 
 */
 
 
 
+
+
+
+
 		require_once( plugin_dir_path( __FILE__ ) . 'functions.php' );
+
+
 
 	// Gets the data
 
+
+
 $id=isset($_POST['id']) ? $_POST['id'] : '';
+
+
 
 $search=isset($_POST['search']) ? $_POST['search'] : '';
 
+
+
 $multiple_search=isset($_POST['multiple_search']) ? $_POST['multiple_search'] : array();
+
+
 
 $items_per_page=isset($_POST['items_per_page']) ? $_POST['items_per_page'] : '';
 
+
+
 $sort=isset($_POST['sort']) ? $_POST['sort'] : '';
+
+
 
 $page=isset($_POST['page']) ? $_POST['page'] : 1;
 
+
+
 $total_items=(isset($_POST['total_items']) and $_POST['total_items']>=0) ? $_POST['total_items'] : '';
 
+
+
 $extra_cols=isset($_POST['extra_cols']) ? $_POST['extra_cols'] : array();
+
+
 
 $extra_vars=isset($_POST['extra_vars']) ? $_POST['extra_vars'] : array();
 
 
 
+
+
+
+
 	
+
+
 
 	require_once( plugin_dir_path( __FILE__ ) . 'creativeTable.php' );
 
+
+
 $ct=new CreativeTable();
+
+
+
+
 
 
 
@@ -1295,33 +1263,67 @@ if($id=='' or $id=='ctLeads'){
 
 
 
+
+
+
+
+
+
 $params = array(
+
+
 
     'id'                  => 'ctLeads',
 
+
+
     'sql_query'           => "SELECT id, email, url, lead, time FROM ". $wpdb->prefix . "cnc_dudapro",
+
+
 
     'search'              => $search,
 
+
+
     'multiple_search'     => $multiple_search,
+
+
 
     'items_per_page'      => $items_per_page,
 
+
+
     'sort'                => $sort,
+
+
 
     'page'                => $page,
 
+
+
     'total_items'         => $total_items,
+
+
 
     'header'              => 'id, email, url, lead, time',
 
+
+
     'width'               => '50,40,20,50,50,50',
+
+
 
     'items_per_page_init' => '10,25,50,100,250',
 
+
+
     'ajax_url'            => 'admin.php?page=dudapro-leads',
 
+
+
 	'display_cols'        => 'tfttttt'
+
+
 
 );
 
@@ -1331,37 +1333,81 @@ $params = array(
 
 
 
+
+
+
+
+
+
+
+
 // ***********************************************************************************
+
+
 
 // UNCOMMENT TO TEST THE DIFFERENTS OPTIONS AND SEE THE RESULTS AND TEST SOME YOURSELF
 
 
 
+
+
+
+
 // extra columns - array(array(col,header,width,html),array(...),...) - default: array();
+
+
 
 $arr_extra_cols[0] = array(1,'<input type="checkbox" id="ct_check_all" name="ct_check_all" onclick="checkAllLeads();" />','20','<input type="checkbox" id="ct_check" name="ct_check[]" value="#COL1#" onclick="check();" />');  // column, header, width, html
 
+
+
 //$arr_extra_cols[1] = array(7,'Actions','45','<a href=""  ><img src="' . plugins_url('cnc-dudamobile-reseller-preview') . '/admin/images/icon-delete.gif" id="#COL1#"  class="del"/></a>');  // column, header, width, html
+
+
 
 $params['extra_cols'] = $arr_extra_cols;
 
 
 
+
+
+
+
 $arr_actions[0] = array('','-- Actions --');  // value, text
+
+
 
 //$arr_actions[1] = array('publish','Publish');  // value, text
 
+
+
 $arr_actions[1] = array('delete','Delete');  // value, text
+
+
 
 $params['actions'] = $arr_actions;
 
+
+
  
+
+
 
 $params['actions_url'] = 'ctActions(\'#ID#\')';  // javascript code triggered when actions change - default
 
+
+
 //$params['actions_url'] = 'alert(\'#COL1#\')';  // javascript code triggered when actions change
 
+
+
 // ***********************************************************************************
+
+
+
+
+
+
 
 
 
@@ -1371,29 +1417,59 @@ $ct->table($params);
 
 
 
+
+
+
+
 // Insert a Pager into the table (I used this CreativePager Lite version because its very easy to use, but you may use any pager system that you like)
+
+
 
 $ct->pager = getCreativePagerLite('ctLeads',$page,$ct->total_items,$ct->items_per_page);
 
 
 
+
+
+
+
 // If its an ajax call
+
+
 
 if(isset($_POST['ajax_option'])){
 
+
+
     echo json_encode($ct->display($_POST['ajax_option'],true));
+
+
 
 	
 
+
+
     exit;
+
+
 
 }else{
 
+
+
     $out=$ct->display();
 
-}
+
 
 }
+
+
+
+}
+
+
+
+
 
 
 
@@ -1401,11 +1477,23 @@ $message .=  'Everytime a mobile or d1 site is created that information is saved
 
 
 
+
+
+
+
 return $message;
+
+
 
 	}
 
+
+
 	
+
+
+
+
 
 
 
@@ -1413,7 +1501,15 @@ return $message;
 
 
 
+
+
+
+
 		echo 'test';
+
+
+
+
 
 
 
@@ -1421,7 +1517,19 @@ return $message;
 
 
 
+
+
+
+
 	
+
+
+
+
+
+
+
+
 
 
 
@@ -1433,11 +1541,23 @@ return $message;
 
 
 
+
+
+
+
 	 * Return an instance of this class.
 
 
 
+
+
+
+
 	 *
+
+
+
+
 
 
 
@@ -1445,7 +1565,15 @@ return $message;
 
 
 
+
+
+
+
 	 *
+
+
+
+
 
 
 
@@ -1453,13 +1581,27 @@ return $message;
 
 
 
+
+
+
+
 	 */
+
+
+
+
 
 
 
 	public static function get_instance() {
 
+
+
 		/*
+
+
+
+
 
 
 
@@ -1467,7 +1609,15 @@ return $message;
 
 
 
+
+
+
+
 		 *
+
+
+
+
 
 
 
@@ -1475,7 +1625,15 @@ return $message;
 
 
 
+
+
+
+
 		 */
+
+
+
+
 
 
 
@@ -1483,7 +1641,15 @@ return $message;
 
 
 
+
+
+
+
 			return;
+
+
+
+
 
 
 
@@ -1495,7 +1661,19 @@ return $message;
 
 
 
+
+
+
+
+
+
+
+
 		// If the single instance hasn't been set, set it now.
+
+
+
+
 
 
 
@@ -1503,73 +1681,155 @@ return $message;
 
 
 
+
+
+
+
 			self::$instance = new self;
+
+
+
+
 
 
 
 		}
 
+
+
 		return self::$instance;
 
+
+
 	}
+
+
+
+
 
 
 
 public function dudapro_welcome() {
 
+
+
 /*
+
+
 
 	$rss = new DOMDocument();
 
+
+
 	$rss->load('http://cncwebsolutions.com/category/dudapro-plugin/feed');
+
+
 
 	$feed = array();
 
+
+
 	foreach ($rss->getElementsByTagName('item') as $node) {
+
+
 
 		$item = array ( 
 
+
+
 			'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
+
+
 
 			'desc' => $node->getElementsByTagName('description')->item(0)->nodeValue,
 
+
+
 			'link' => $node->getElementsByTagName('link')->item(0)->nodeValue,
+
+
 
 			'date' => $node->getElementsByTagName('pubDate')->item(0)->nodeValue,
 
+
+
 			);
+
+
 
 		array_push($feed, $item);
 
+
+
 	}
+
+
 
 	$limit = 5;
 
+
+
 	
+
+
 
 	for($x=0;$x<$limit;$x++) {
 
+
+
 		$title = str_replace(' & ', ' &amp; ', $feed[$x]['title']);
+
+
 
 		$link = $feed[$x]['link'];
 
+
+
 		$description = $feed[$x]['desc'];
+
+
 
 		$date = date('l F d, Y', strtotime($feed[$x]['date']));
 
+
+
 		$rssfeed .= '<p><strong><a href="'.$link.'" title="'.$title.'">'.$title.'</a></strong><br />';
+
+
 
 		$rssfeed .= '<p>'.$description.'</p>';
 
+
+
 	}
+
+
 
 */
 
+
+
 $rssfeed = "";
+
+
 
 return $rssfeed;
 
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1583,13 +1843,27 @@ return $rssfeed;
 
 // d1 details
 
+
+
 public function d1_details($site)
+
+
 
 {
 
+
+
 return 'test';	
 
+
+
 }
+
+
+
+
+
+
 
 
 
@@ -1597,25 +1871,51 @@ return 'test';
 
 public function show_mobile()
 
+
+
 {
+
+
 
 global $wpdb;	
 
+
+
 	
 
+
+
 	$options = get_option('dudapro_api_settings');
+
+
 
     $apissoendpoint = $options['apissoendpoint'];
 
+
+
 	$options = get_option('dudapro_api_settings');
 
+
+
     $duda_username = $options['apiusername'];
+
+
 
 	$duda_password = $options['apipassword'];
 
 
 
+
+
+
+
 	$path = $_SERVER['DOCUMENT_ROOT'];
+
+
+
+
+
+
 
 
 
@@ -1623,49 +1923,97 @@ global $wpdb;
 
   if(!empty($_REQUEST['dmid']))
 
+
+
    {
 
+
+
 	   
+
+
 
 	   $theSite = $_REQUEST['dmid'];
 
+
+
 	   $stuff = $this->delete_dm($theSite);
+
+
 
 	   return $stuff;
 
+
+
    }
+
+
 
    elseif (!empty($_REQUEST['dmids']))
 
+
+
     {
 
+
+
 	   
+
+
 
 	   $theSite = $_REQUEST['dmids'];
 
+
+
 	   $stuff2 = $this->stats_dm($theSite);
+
+
 
 	   return  $stuff2;
 
+
+
    }
+
+
 
     elseif (!empty($_REQUEST['dmidc']))
 
+
+
     {
+
+
 
 	   
 
+
+
 	   $theSite = $_REQUEST['dmidc'];
+
+
 
 	   $stuff2 = $this->contact_dm($theSite);
 
+
+
 	   return  $stuff2;
+
+
 
    }
 
+
+
    else
 
+
+
    {
+
+
+
+
 
 
 
@@ -1673,7 +2021,15 @@ $args = array(
 
 
 
+
+
+
+
 		'headers' => array(
+
+
+
+
 
 
 
@@ -1681,13 +2037,27 @@ $args = array(
 
 
 
+
+
+
+
 			)
+
+
+
+
 
 
 
 		);
 
+
+
 	
+
+
+
+
 
 
 
@@ -1695,7 +2065,15 @@ $args = array(
 
 
 
+
+
+
+
 	
+
+
+
+
 
 
 
@@ -1703,78 +2081,157 @@ $args = array(
 
 
 
+
+
+
+
 //print_r( $data);
 
+
+
 $i=0;
+
+
+
+
 
 
 
 if (!empty($duda_password))
 
+
+
 {
+
+
 
 $tbl = '
 
+
+
 This page will be getting frequent updates to expand functionality.  BE CAREFUL, DELETING YOUR SITE IS NOT RECOVERABLE. Deleting your site will immediately and permanently delete the site and cancel any subscription associated with the site. Please note that after deleting a site there is no way to bring the site back. Deleting a site will also cancel any active subscription/payment associated with the site. <br/><br/> 
+
+
 
 <table>';
 
 
 
+
+
+
+
 $i=0;
+
+
+
+
 
 
 
 if (is_array($data))
 
 
+
+
+
 		{
+
+
 
 	foreach ( $data as $sites ) {
 
-	
+
 
 	
+
+
+
+	
+
+
 
 				 $myarray[]=array($sites,'<img src="http://dp-cdn.multiscreensite.com/template-snapshot-prod/'. $sites .'.jpg?rand=1231S" style="width:100px;height:100px;">',$sites,'<a href="http://'. $apissoendpoint . '/site/'. $sites . '" target="new">preview link</a>','<a href="http://'. $apissoendpoint . '/compare/'. $sites . '" target="new">comparison link</a>','<a href="?page=dudapro-mobile-accts&dmidc='.$sites .'" target="new">view form</a>','<a href="?page=dudapro-mobile-accts&dmids='.$sites .'" target="new">view stats</a>');
 
 
 
+
+
+
+
 	  
+
+
 
 	}
 
+
+
 	
+
+
 
 require_once( plugin_dir_path( __FILE__ ) . 'functions.php' );
 
+
+
 	// Gets the data
+
+
 
 $id=isset($_POST['id']) ? $_POST['id'] : '';
 
+
+
 $search=isset($_POST['search']) ? $_POST['search'] : '';
+
+
 
 $multiple_search=isset($_POST['multiple_search']) ? $_POST['multiple_search'] : array();
 
+
+
 $items_per_page=isset($_POST['items_per_page']) ? $_POST['items_per_page'] : '';
+
+
 
 $sort=isset($_POST['sort']) ? $_POST['sort'] : '';
 
+
+
 $page=isset($_POST['page']) ? $_POST['page'] : 1;
+
+
 
 $total_items=(isset($_POST['total_items']) and $_POST['total_items']>=0) ? $_POST['total_items'] : '';
 
+
+
 $extra_cols=isset($_POST['extra_cols']) ? $_POST['extra_cols'] : array();
+
+
 
 $extra_vars=isset($_POST['extra_vars']) ? $_POST['extra_vars'] : array();
 
 
 
+
+
+
+
 	
+
+
 
 	require_once( plugin_dir_path( __FILE__ ) . 'creativeTable.php' );
 
+
+
 $ct=new CreativeTable();
+
+
+
+
 
 
 
@@ -1782,49 +2239,97 @@ if($id=='' or $id=='ctMobile'){
 
 
 
+
+
+
+
 $params = array(
+
+
 
     'id'                  => 'ctMobile',
 
+
+
 //	'search_init'		  => false,
+
+
 
     'data'                => $myarray,
 
+
+
     'search'              => $search,
+
+
 
     'multiple_search'     => $multiple_search,
 
+
+
     'items_per_page'      => $items_per_page,
+
+
 
 	'sort_init'			  => false,
 
+
+
     'sort'                => $sort,
+
+
 
     'page'                => $page,
 
+
+
     'total_items'         => $total_items,
+
+
 
     'header'              => 'ID,Image,SiteName,PerviewLink,CompareLink,FormLink,StatsLink',
 
+
+
     'width'               => '0,10,105,50,100,50,50',
+
+
 
     'items_per_page_init' => '5,10,25,50,100,200',
 
+
+
     'ajax_url'            => 'admin.php?page=dudapro-mobile-accts',
 
+
+
 	'display_cols'		      => 'tftttttt'
+
+
 
 );
 
 
 
+
+
+
+
 // ***********************************************************************************
+
+
 
 // UNCOMMENT TO TEST THE DIFFERENTS OPTIONS AND SEE THE RESULTS AND TEST SOME YOURSELF
 
 
 
+
+
+
+
 // extra columns - array(array(col,header,width,html),array(...),...) - default: array();
+
+
 
 $arr_extra_cols[0] = array(1,'<input type="checkbox" id="ct_check_all" name="ct_check_all" onclick="checkAllMobile();" />','20','<input type="checkbox" id="ct_check" name="ct_check[]" value="#COL1#" onclick="check();" />');  // column, header, width, html
 
@@ -1832,7 +2337,15 @@ $arr_extra_cols[0] = array(1,'<input type="checkbox" id="ct_check_all" name="ct_
 
 
 
+
+
+
+
+
+
 //$arr_extra_cols[1] = array(9,'Actions','45','<a href="javascript: funcEdit(\'#COL4#\');"><img src="' . plugins_url('cnc-dudamobile-reseller-preview') . '/admin/images/icon-edit.gif" /></a>  <a href=""  ><img src="' . plugins_url('cnc-dudamobile-reseller-preview') . '/admin/images/icon-delete.gif" id="#COL1#"  class="del"/></a>');  // column, header, width, html
+
+
 
 $params['extra_cols'] = $arr_extra_cols;
 
@@ -1840,21 +2353,47 @@ $params['extra_cols'] = $arr_extra_cols;
 
 
 
+
+
+
+
+
+
 $arr_actions[0] = array('','-- Actions --');  // value, text
+
+
 
 //$arr_actions[1] = array('publish','Publish');  // value, text
 
+
+
 $arr_actions[1] = array('delete','Delete');  // value, text
+
+
 
 $params['actions'] = $arr_actions;
 
+
+
  
+
+
 
 $params['actions_url'] = 'ctActions(\'#ID#\')';  // javascript code triggered when actions change - default
 
+
+
 //$params['actions_url'] = 'alert(\'Actions changed\')';  // javascript code triggered when actions change
 
+
+
 // ***********************************************************************************
+
+
+
+
+
+
 
 
 
@@ -1864,55 +2403,111 @@ $ct->table($params);
 
 
 
+
+
+
+
 // Insert a Pager into the table (I used this CreativePager Lite version because its very easy to use, but you may use any pager system that you like)
+
+
 
 $ct->pager = getCreativePagerLite('ctMobile',$page,$ct->total_items,$ct->items_per_page);
 
 
 
+
+
+
+
 // If its an ajax call
+
+
 
 if(isset($_POST['ajax_option'])){
 
+
+
     echo json_encode($ct->display($_POST['ajax_option'],true));
+
+
 
     exit;
 
+
+
 }else{
+
+
 
     $out=$ct->display();
 
+
+
 }
 
 
 
+
+
+
+
 }
+
+
 
 		}
 
+
+
 return $out;  
+
+
 
 	}
 
-}
+
 
 }
+
+
+
+}
+
+
 
 // show multiscreen accounts
 
+
+
 public function show_multiscreen()
+
+
 
 {
 
+
+
 	$options = get_option('dudapro_api_settings');
+
+
 
     $apissoendpoint = $options['apissoendpoint'];
 
+
+
 	$options = get_option('dudapro_api_settings');
+
+
 
     $duda_username = $options['apiusername'];
 
+
+
 	$duda_password = $options['apipassword'];
+
+
+
+
 
 
 
@@ -1920,107 +2515,215 @@ public function show_multiscreen()
 
 
 
+
+
+
+
 $args = array(
+
+
 
 		'headers' => array(
 
+
+
 			'Authorization' => 'Basic ' . base64_encode( $duda_username . ':' . $duda_password )
+
+
 
 			)
 
+
+
 		);
+
+
 
 /// empty querystring	
 
+
+
   // param was set in the query string
+
+
 
    if(!empty($_REQUEST['d1id']))
 
+
+
    {
+
+
 
 	   $theSite = $_REQUEST['d1id'];
 
+
+
 	   $stuff = $this->delete_d1($theSite);
+
+
 
 	   return $stuff;
 
+
+
    }
+
+
 
    elseif (!empty($_REQUEST['d1ids']))
 
+
+
     {
+
+
 
 	   $theSite = $_REQUEST['d1ids'];
 
+
+
 	   $stuff2 = $this->stats_d1($theSite);
+
+
 
 	   return  $stuff2;
 
+
+
    }
+
+
 
     elseif (!empty($_REQUEST['d1idc']))
 
+
+
     {
+
+
 
 	   $theSite = $_REQUEST['d1idc'];
 
+
+
 	   $stuff2 = $this->contact_d1($theSite);
+
+
 
 	   return  $stuff2;
 
+
+
    }
+
+
 
    else
 
+
+
    {
 
+
+
      $json = wp_remote_retrieve_body(wp_remote_get( 'https://api.dudamobile.com/api/sites/multiscreen/created?from=2000-01-01&to='. date('Y-m-d'), $args ));
+
+
 
   	$data = json_decode($json, true);
 
 
 
+
+
+
+
 $i=0;
 
+
+
 if (is_array($data))
+
 {
+
 	foreach ( $data as $sites ) {
+
+
 
 				 $myarray[]=array($sites,'<img src="http://dp-cdn.multiscreensite.com/template-snapshot-prod/'. $sites .'.jpg?rand=1231S" style="width:100px;height:100px;">',$sites,'<a href="http://'. $apissoendpoint . '/preview/'. $sites . '" target="new">preview link</a>','<a href="admin.php?page=dudapro-multiscreen-accts&d1idc='.$sites .'" target="new">view form</a>','<a href="admin.php?page=dudapro-multiscreen-accts&d1ids='.$sites .'" target="new">view stats</a>');
 
+
+
 	}
+
 }
+
 	
+
+
 
 require_once( plugin_dir_path( __FILE__ ) . 'functions.php' );
 
+
+
 	// Gets the data
+
+
 
 $id=isset($_POST['id']) ? $_POST['id'] : '';
 
+
+
 $search=isset($_POST['search']) ? $_POST['search'] : '';
+
+
 
 $multiple_search=isset($_POST['multiple_search']) ? $_POST['multiple_search'] : array();
 
+
+
 $items_per_page=isset($_POST['items_per_page']) ? $_POST['items_per_page'] : '';
+
+
 
 $sort=isset($_POST['sort']) ? $_POST['sort'] : '';
 
+
+
 $page=isset($_POST['page']) ? $_POST['page'] : 1;
+
+
 
 $total_items=(isset($_POST['total_items']) and $_POST['total_items']>=0) ? $_POST['total_items'] : '';
 
+
+
 $extra_cols=isset($_POST['extra_cols']) ? $_POST['extra_cols'] : array();
+
+
 
 $extra_vars=isset($_POST['extra_vars']) ? $_POST['extra_vars'] : array();
 
 
 
+
+
+
+
 	
+
+
 
 	require_once( plugin_dir_path( __FILE__ ) . 'creativeTable.php' );
 
+
+
 $ct=new CreativeTable();
+
+
+
+
 
 
 
@@ -2028,49 +2731,97 @@ if($id=='' or $id=='ctMulti'){
 
 
 
+
+
+
+
 $params = array(
+
+
 
     'id'                  => 'ctMulti',
 
+
+
 //	'search_init'		  => false,
+
+
 
     'data'                => $myarray,
 
+
+
     'search'              => $search,
+
+
 
 	'sort_init'			  => false,
 
+
+
     'multiple_search'     => $multiple_search,
+
+
 
     'items_per_page'      => $items_per_page,
 
+
+
     'sort'                => $sort,
+
+
 
     'page'                => $page,
 
+
+
     'total_items'         => $total_items,
+
+
 
     'header'              => 'ID,Image,SiteName,PerviewLink,FormLink,StatsLink',
 
+
+
     'width'               => '0,10,105,100,50,50',
+
+
 
     'items_per_page_init' => '5,10,25,50,100,200',
 
+
+
     'ajax_url'            => 'admin.php?page=dudapro-mobile-accts',
 
+
+
 	'display_cols'		      => 'tftttttt'
+
+
 
 );
 
 
 
+
+
+
+
 // ***********************************************************************************
+
+
 
 // UNCOMMENT TO TEST THE DIFFERENTS OPTIONS AND SEE THE RESULTS AND TEST SOME YOURSELF
 
 
 
+
+
+
+
 // extra columns - array(array(col,header,width,html),array(...),...) - default: array();
+
+
 
 $arr_extra_cols[0] = array(1,'<input type="checkbox" id="ct_check_all" name="ct_check_all" onclick="checkAllMulti();" />','20','<input type="checkbox" id="ct_check" name="ct_check[]" value="#COL1#" onclick="check();" />');  // column, header, width, html
 
@@ -2078,7 +2829,15 @@ $arr_extra_cols[0] = array(1,'<input type="checkbox" id="ct_check_all" name="ct_
 
 
 
+
+
+
+
+
+
 //$arr_extra_cols[1] = array(9,'Actions','45','<a href="javascript: funcEdit(\'#COL4#\');"><img src="' . plugins_url('cnc-dudamobile-reseller-preview') . '/admin/images/icon-edit.gif" /></a>  <a href=""  ><img src="' . plugins_url('cnc-dudamobile-reseller-preview') . '/admin/images/icon-delete.gif" id="#COL1#"  class="del"/></a>');  // column, header, width, html
+
+
 
 $params['extra_cols'] = $arr_extra_cols;
 
@@ -2086,21 +2845,47 @@ $params['extra_cols'] = $arr_extra_cols;
 
 
 
+
+
+
+
+
+
 $arr_actions[0] = array('','-- Actions --');  // value, text
+
+
 
 //$arr_actions[1] = array('publish','Publish');  // value, text
 
+
+
 $arr_actions[1] = array('delete','Delete');  // value, text
+
+
 
 $params['actions'] = $arr_actions;
 
+
+
  
+
+
 
 $params['actions_url'] = 'ctActions(\'#ID#\')';  // javascript code triggered when actions change - default
 
+
+
 //$params['actions_url'] = 'alert(\'Actions changed\')';  // javascript code triggered when actions change
 
+
+
 // ***********************************************************************************
+
+
+
+
+
+
 
 
 
@@ -2110,29 +2895,59 @@ $ct->table($params);
 
 
 
+
+
+
+
 // Insert a Pager into the table (I used this CreativePager Lite version because its very easy to use, but you may use any pager system that you like)
+
+
 
 $ct->pager = getCreativePagerLite('ctMulti',$page,$ct->total_items,$ct->items_per_page);
 
 
 
+
+
+
+
 // If its an ajax call
+
+
 
 if(isset($_POST['ajax_option'])){
 
+
+
     echo json_encode($ct->display($_POST['ajax_option'],true));
+
+
 
     exit;
 
+
+
 }else{
+
+
 
     $out=$ct->display();
 
+
+
 }
 
 
 
+
+
+
+
 }
+
+
+
+
 
 
 
@@ -2140,15 +2955,33 @@ return $out;
 
 
 
-  
+
+
+
 
   
+
+
+
+  
+
+
 
 	}
 
+
+
 	
 
+
+
 }
+
+
+
+
+
+
 
 
 
@@ -2156,17 +2989,33 @@ return $out;
 
 public function contact_dm($site)
 
+
+
 {
+
+
 
 		$options = get_option('dudapro_api_settings');
 
+
+
     $apissoendpoint = $options['apissoendpoint'];
+
+
 
 	$options = get_option('dudapro_api_settings');
 
+
+
     $duda_username = $options['apiusername'];
 
+
+
 	$duda_password = $options['apipassword'];
+
+
+
+
 
 
 
@@ -2174,15 +3023,31 @@ public function contact_dm($site)
 
 
 
+
+
+
+
 $args = array(
+
+
 
 		'result' => 'traffic',
 
+
+
 		'headers' => array(
+
+
 
 		
 
+
+
 			'Authorization' => 'Basic ' . base64_encode( $duda_username . ':' . $duda_password )
+
+
+
+
 
 
 
@@ -2190,9 +3055,19 @@ $args = array(
 
 
 
+
+
+
+
 		);
 
+
+
 	
+
+
+
+
 
 
 
@@ -2200,7 +3075,15 @@ $args = array(
 
 
 
+
+
+
+
 	
+
+
+
+
 
 
 
@@ -2208,66 +3091,133 @@ $args = array(
 
 
 
+
+
+
+
 if (!$data['error_code'])
 
+
+
 {
+
+
 
 $i=0;
 
+
+
 	if (empty($data))
+
+
 
 		{
 
+
+
 			$contactdata = 'Sorry, no form results found <br/>';
+
+
 
 	
 
+
+
 		}
+
+
 
 		else
 
+
+
 		{
+
+
 
 if (is_array($data))
+
 {
+
 		foreach ( $data as $sites )
 
+
+
 		{
+
+
 
 		
 
+
+
 			$contactdata  .= 'Form Name: ' . $sites['form_title'] . '<br/>'.	
+
+
 
 			'Date: ' . $sites['date'] . '<br/>';
 
+
+
 			
+
+
 
 			foreach ($sites['message'] as $key => $val) {
 
+
+
 				$f .= "$key = $val\n";}
 
+
+
 			
+
+
 
 			$contactdata .= $f ;
 
+
+
 			
 
+
+
 		}
+
 }
+
+
 
 	}
 
+
+
 }
+
+
 
 else
 
+
+
 {
+
+
 
 	
 
+
+
 			$contactdata = 'Sorry, no form results found <br/>';
 
+
+
 }
+
+
+
+
 
 
 
@@ -2275,7 +3225,17 @@ return $contactdata . '<br/><a href="?page=dudapro-mobile-accts">Back to account
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
 
 
 
@@ -2283,17 +3243,33 @@ return $contactdata . '<br/><a href="?page=dudapro-mobile-accts">Back to account
 
 public function stats_dm($site)
 
+
+
 {
 
+
+
 	$options = get_option('dudapro_api_settings');
+
+
 
     $apissoendpoint = $options['apissoendpoint'];
 
+
+
 	$options = get_option('dudapro_api_settings');
+
+
 
     $duda_username = $options['apiusername'];
 
+
+
 	$duda_password = $options['apipassword'];
+
+
+
+
 
 
 
@@ -2301,15 +3277,31 @@ public function stats_dm($site)
 
 
 
+
+
+
+
 $args = array(
+
+
 
 		'result' => 'traffic',
 
+
+
 		'headers' => array(
+
+
 
 		
 
+
+
 			'Authorization' => 'Basic ' . base64_encode( $duda_username . ':' . $duda_password )
+
+
+
+
 
 
 
@@ -2317,9 +3309,19 @@ $args = array(
 
 
 
+
+
+
+
 		);
 
+
+
 	
+
+
+
+
 
 
 
@@ -2327,7 +3329,15 @@ $args = array(
 
 
 
+
+
+
+
 	
+
+
+
+
 
 
 
@@ -2335,27 +3345,53 @@ $args = array(
 
 
 
+
+
+
+
 $i=0;
 
 
+
+
+
 if (is_array($data))
-{
-foreach ( $data as $sites )
 
 {
+
+foreach ( $data as $sites )
+
+
+
+{
+
+
 
 $dmstats = $sites->value;	
 
+
+
 }
+
 }
+
+
 
 $display =  '<h2>Stats for '. $site . '</h2>' .
 
+
+
 'Visits: ' . $data['VISITS'] . '<br/>' .
+
+
 
 'Visitors: ' . $data['VISITORS'] . '<br/>' .
 
+
+
 'Page Views: ' . $data['PAGE_VIEWS'] . '<br/><br/>'.
+
+
 
 '<a href="?page=dudapro-mobile-accts">Back to accounts</a>';
 
@@ -2363,7 +3399,17 @@ $display =  '<h2>Stats for '. $site . '</h2>' .
 
 
 
+
+
+
+
+
+
 return $display;
+
+
+
+
 
 
 
@@ -2371,21 +3417,43 @@ return $display;
 
 
 
+
+
+
+
 // delete duda mobile site
+
+
 
 public function delete_dm($site)
 
+
+
 {
 
+
+
 	$options = get_option('dudapro_api_settings');
+
+
 
     $apissoendpoint = $options['apissoendpoint'];
 
+
+
 	$options = get_option('dudapro_api_settings');
+
+
 
     $duda_username = $options['apiusername'];
 
+
+
 	$duda_password = $options['apipassword'];
+
+
+
+
 
 
 
@@ -2393,11 +3461,23 @@ public function delete_dm($site)
 
 
 
+
+
+
+
 $args = array(
+
+
 
 		'method' => 'delete',
 
+
+
 		'headers' => array(
+
+
+
+
 
 
 
@@ -2405,13 +3485,27 @@ $args = array(
 
 
 
+
+
+
+
 			)
+
+
+
+
 
 
 
 		);
 
+
+
 	
+
+
+
+
 
 
 
@@ -2419,7 +3513,15 @@ $args = array(
 
 
 
+
+
+
+
 	
+
+
+
+
 
 
 
@@ -2427,7 +3529,17 @@ $args = array(
 
 
 
+
+
+
+
 $i=0;
+
+
+
+
+
+
 
 
 
@@ -2435,9 +3547,19 @@ $i=0;
 
 return 'Mobile site '.  $site . ' was deleted, <a href="?page=dudapro-mobile-accts">go back to accounts</a>';
 
+
+
 	
 
+
+
 }
+
+
+
+
+
+
 
 
 
@@ -2445,19 +3567,37 @@ return 'Mobile site '.  $site . ' was deleted, <a href="?page=dudapro-mobile-acc
 
 // delete multiscreen site
 
+
+
 public function delete_d1($site)
+
+
 
 {
 
+
+
 	$options = get_option('dudapro_api_settings');
+
+
 
     $apissoendpoint = $options['apissoendpoint'];
 
+
+
 	$options = get_option('dudapro_api_settings');
+
+
 
     $duda_username = $options['apiusername'];
 
+
+
 	$duda_password = $options['apipassword'];
+
+
+
+
 
 
 
@@ -2465,11 +3605,23 @@ public function delete_d1($site)
 
 
 
+
+
+
+
 $args = array(
+
+
 
 		'method' => 'delete',
 
+
+
 		'headers' => array(
+
+
+
+
 
 
 
@@ -2477,13 +3629,27 @@ $args = array(
 
 
 
+
+
+
+
 			)
+
+
+
+
 
 
 
 		);
 
+
+
 	
+
+
+
+
 
 
 
@@ -2491,7 +3657,15 @@ $args = array(
 
 
 
+
+
+
+
 	
+
+
+
+
 
 
 
@@ -2499,7 +3673,17 @@ $args = array(
 
 
 
+
+
+
+
 $i=0;
+
+
+
+
+
+
 
 
 
@@ -2507,25 +3691,49 @@ $i=0;
 
 return $site . ' was deleted, <a href="?page=dudapro-multiscreen-accts">go back to accounts</a>';
 
+
+
 	
+
+
 
 }
 
 
 
+
+
+
+
 public function stats_d1($site)
+
+
 
 {
 
+
+
 	$options = get_option('dudapro_api_settings');
+
+
 
     $apissoendpoint = $options['apissoendpoint'];
 
+
+
 	$options = get_option('dudapro_api_settings');
+
+
 
     $duda_username = $options['apiusername'];
 
+
+
 	$duda_password = $options['apipassword'];
+
+
+
+
 
 
 
@@ -2533,15 +3741,31 @@ public function stats_d1($site)
 
 
 
+
+
+
+
 $args = array(
+
+
 
 		'result' => 'traffic',
 
+
+
 		'headers' => array(
+
+
 
 		
 
+
+
 			'Authorization' => 'Basic ' . base64_encode( $duda_username . ':' . $duda_password )
+
+
+
+
 
 
 
@@ -2549,9 +3773,19 @@ $args = array(
 
 
 
+
+
+
+
 		);
 
+
+
 	
+
+
+
+
 
 
 
@@ -2559,7 +3793,15 @@ $args = array(
 
 
 
+
+
+
+
 	
+
+
+
+
 
 
 
@@ -2567,29 +3809,61 @@ $args = array(
 
 
 
+
+
+
+
 $i=0;
 
 
+
+
+
 if (is_array($data))
-{
-foreach ( $data as $sites )
 
 {
+
+foreach ( $data as $sites )
+
+
+
+{
+
+
 
 $dmstats = $sites->value;	
 
+
+
 }
+
 }
+
+
 
 $display =  '<h2>Stats for '. $site . '</h2>' .
 
+
+
 'Visits: ' . $data['VISITS'] . '<br/>' .
+
+
 
 'Visitors: ' . $data['VISITORS'] . '<br/>' .
 
+
+
 'Page Views: ' . $data['PAGE_VIEWS'] . '<br/><br/>'.
 
+
+
 '<a href="?page=dudapro-multiscreen-accts">Back to accounts</a>';
+
+
+
+
+
+
 
 
 
@@ -2599,23 +3873,47 @@ return $display;
 
 
 
+
+
+
+
 }
+
+
+
+
 
 
 
 public function contact_d1($site)
 
+
+
 {
+
+
 
 		$options = get_option('dudapro_api_settings');
 
+
+
     $apissoendpoint = $options['apissoendpoint'];
+
+
 
 	$options = get_option('dudapro_api_settings');
 
+
+
     $duda_username = $options['apiusername'];
 
+
+
 	$duda_password = $options['apipassword'];
+
+
+
+
 
 
 
@@ -2623,15 +3921,31 @@ public function contact_d1($site)
 
 
 
+
+
+
+
 $args = array(
+
+
 
 		'result' => 'traffic',
 
+
+
 		'headers' => array(
+
+
 
 		
 
+
+
 			'Authorization' => 'Basic ' . base64_encode( $duda_username . ':' . $duda_password )
+
+
+
+
 
 
 
@@ -2639,9 +3953,19 @@ $args = array(
 
 
 
+
+
+
+
 		);
 
+
+
 	
+
+
+
+
 
 
 
@@ -2649,7 +3973,15 @@ $args = array(
 
 
 
+
+
+
+
 	
+
+
+
+
 
 
 
@@ -2657,50 +3989,103 @@ $args = array(
 
 
 
+
+
+
+
 $i=0;
+
+
 
 if (empty($data))
 
+
+
 	{
+
+
 
 		$contactdata = 'no  form results found <br/>';
 
 
 
+
+
+
+
 	}
+
+
 
 	else
 
+
+
 	{
+
+
 
 if (is_array($data))
+
 {
+
 	foreach ( $data as $sites )
 
+
+
 	{
+
+
 
 	
 
+
+
 		$contactdata  .= 'Form Name: ' . $sites['form_title'] . '<br/>'.	
+
+
 
 		'Date: ' . $sites['date'] . '<br/>';
 
+
+
 		
+
+
 
 		foreach ($sites['message'] as $key => $val) {
 
+
+
 			$f .= "$key = $val\n";}
 
+
+
 		
+
+
 
 		$contactdata .= $f ;
 
+
+
 		
 
+
+
 	}
-}
 
 }
+
+
+
+}
+
+
+
+
+
+
 
 
 
@@ -2710,7 +4095,17 @@ return $contactdata . '<br/><a href="?page=dudapro-multiscreen-accts">Back to ac
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
 
 
 
@@ -2720,19 +4115,39 @@ return $contactdata . '<br/><a href="?page=dudapro-multiscreen-accts">Back to ac
 
 
 
+
+
+
+
 public function get_account()
+
+
 
 {
 
+
+
 	$options = get_option('dudapro_api_settings');
+
+
 
     $apissoendpoint = $options['apissoendpoint'];
 
+
+
 	$options = get_option('dudapro_api_settings');
+
+
 
     $duda_username = $options['apiusername'];
 
+
+
 	$duda_password = $options['apipassword'];
+
+
+
+
 
 
 
@@ -2740,17 +4155,35 @@ public function get_account()
 
 
 
+
+
+
+
 $args = array(
+
+
 
 	'headers' => array(
 
+
+
 			'Authorization' => 'Basic ' . base64_encode( $duda_username . ':' . $duda_password )
+
+
 
 			)
 
+
+
 		);
 
+
+
 	
+
+
+
+
 
 
 
@@ -2758,7 +4191,15 @@ $args = array(
 
 
 
+
+
+
+
 	
+
+
+
+
 
 
 
@@ -2766,7 +4207,17 @@ $args = array(
 
 
 
+
+
+
+
 $i=0;
+
+
+
+
+
+
 
 
 
@@ -2780,9 +4231,25 @@ $i=0;
 
 
 
+
+
+
+
+
+
+
+
 	
 
+
+
 }
+
+
+
+
+
+
 
 
 
@@ -2792,19 +4259,39 @@ $i=0;
 
 
 
+
+
+
+
 public function create_stats($siteid)
+
+
 
 {
 
+
+
 		$options = get_option('dudapro_api_settings');
+
+
 
     $apissoendpoint = $options['apissoendpoint'];
 
+
+
 	$options = get_option('dudapro_api_settings');
+
+
 
     $duda_username = $options['apiusername'];
 
+
+
 	$duda_password = $options['apipassword'];
+
+
+
+
 
 
 
@@ -2812,7 +4299,15 @@ public function create_stats($siteid)
 
 
 
+
+
+
+
 $args = array(
+
+
+
+
 
 
 
@@ -2820,7 +4315,15 @@ $args = array(
 
 
 
+
+
+
+
 			'Authorization' => 'Basic ' . base64_encode( $duda_username . ':' . $duda_password )
+
+
+
+
 
 
 
@@ -2828,9 +4331,19 @@ $args = array(
 
 
 
+
+
+
+
 		);
 
+
+
 	
+
+
+
+
 
 
 
@@ -2838,7 +4351,15 @@ $args = array(
 
 
 
+
+
+
+
 	
+
+
+
+
 
 
 
@@ -2846,7 +4367,17 @@ $args = array(
 
 
 
+
+
+
+
 $i=0;
+
+
+
+
+
+
 
 
 
@@ -2860,9 +4391,25 @@ $i=0;
 
 
 
+
+
+
+
+
+
+
+
 	
 
+
+
 }
+
+
+
+
+
+
 
 
 
@@ -2872,7 +4419,15 @@ public function license_check()
 
 
 
+
+
+
+
 {
+
+
+
+
 
 
 
@@ -2880,7 +4435,15 @@ public function license_check()
 
 
 
+
+
+
+
 	$licensekey = $options['license_key'];
+
+
+
+
 
 
 
@@ -2888,7 +4451,15 @@ public function license_check()
 
 
 
+
+
+
+
 zNWbodHXlNmc192czNWbodHXzN2bkRHacBFUNFEWcNHduVWb1N2bExFd0FWTcNnclNXVcpzQioDM4ozc
+
+
+
+
 
 
 
@@ -2896,7 +4467,15 @@ zNWbodHXlNmc192czNWbodHXzN2bkRHacBFUNFEWcNHduVWb1N2bExFd0FWTcNnclNXVcpzQioDM4ozc
 
 
 
+
+
+
+
 j9Gbuc3d3xCdz9GasF2YvxmI6MjM6M3Oi4Wah12bkRWasFmdioTMxozc7ISeshGdu9WTiozN6M3OiUGb
+
+
+
+
 
 
 
@@ -2904,7 +4483,15 @@ jl3Yn5WasxWaiJiOyEjOztjI3ATL4ATL4ADMyIiOwEjOztjIlRXYkVWdkRHel5mI6ETM6M3OicDMtcDM
 
 
 
+
+
+
+
 tgDMwIjI6ATM6M3OiUGdhR2ZlJnI6cjOztjIlNXYlxEI5xGa052bNByUD1ESXJiO5EjOztjIl1WYuR3Y
+
+
+
+
 
 
 
@@ -2912,11 +4499,23 @@ tgDMwIjI6ATM6M3OiUGdhR2ZlJnI6cjOztjIlNXYlxEI5xGa052bNByUD1ESXJiO5EjOztjIl1WYuR3Y
 
 
 
+
+
+
+
 pFWblJiO1ozc7IyUD1ESXBCd0FWTioDMxozc7ISZtFmbkVmclR3cpdWZyJiO0EjOztjIlZXa0NWQiojN
 
 
 
+
+
+
+
 6M3OiMXd0FGdzJiO2ozc7pjMxoTY8baca0885830a33725148e94e693f3f073294c0558d38e31f844
+
+
+
+
 
 
 
@@ -2932,7 +4531,23 @@ c5e399e3c16a';
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 # The call below actually performs the license check. You need to pass in the license key and the local key data
+
+
+
+
 
 
 
@@ -2944,7 +4559,19 @@ $results = $this->check_license($licensekey,$localkey);
 
 
 
+
+
+
+
+
+
+
+
 # For Debugging, Echo Results
+
+
+
+
 
 
 
@@ -2952,11 +4579,23 @@ $results = $this->check_license($licensekey,$localkey);
 
 
 
+
+
+
+
 $licenseMessage = '';
 
 
 
+
+
+
+
 if ($results["status"]=="Active") {
+
+
+
+
 
 
 
@@ -2968,7 +4607,19 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
+
+
+
+
 		if ($results["localkey"]) {
+
+
+
+
 
 
 
@@ -2976,7 +4627,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 			$localkeydata = $results["localkey"];
+
+
+
+
 
 
 
@@ -2984,7 +4643,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 		}
+
+
+
+
 
 
 
@@ -2992,7 +4659,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 		$licenseMessage =  'Invalid';
+
+
+
+
 
 
 
@@ -3000,7 +4675,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 		$licenseMessage =  'Expired';
+
+
+
+
 
 
 
@@ -3008,7 +4691,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 	   $licenseMessage =  'Suspended';
+
+
+
+
 
 
 
@@ -3016,11 +4707,23 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 	return  $licenseMessage;
 
 
 
+
+
+
+
 	
+
+
+
+
 
 
 
@@ -3032,7 +4735,19 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
+
+
+
+
 	
+
+
+
+
 
 
 
@@ -3048,7 +4763,23 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 	/**
+
+
+
+
 
 
 
@@ -3056,7 +4787,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 	 *
+
+
+
+
 
 
 
@@ -3064,7 +4803,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 	 *
+
+
+
+
 
 
 
@@ -3072,7 +4819,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 	 *
+
+
+
+
 
 
 
@@ -3080,7 +4835,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 	 *
+
+
+
+
 
 
 
@@ -3088,7 +4851,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 	 */
+
+
+
+
 
 
 
@@ -3096,7 +4867,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 	echo 'test';exit();
+
+
+
+
 
 
 
@@ -3104,11 +4883,27 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 			return;
 
 
 
+
+
+
+
 		}
+
+
+
+
+
+
+
+
 
 
 
@@ -3120,7 +4915,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 		if ( $this->plugin_screen_hook_suffix == $screen->id ) {
+
+
+
+
 
 
 
@@ -3128,7 +4931,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 		}
+
+
+
+
 
 
 
@@ -3136,9 +4947,21 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 		wp_register_style( 'custom_wp_admin_css', plugin_dir_url(__FILE__) . 'styles/css/creative.css', false, '1.0.0' );
 
+
+
         wp_enqueue_style( 'custom_wp_admin_css' );
+
+
+
+
+
+
 
 
 
@@ -3148,7 +4971,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 			
+
+
+
+
 
 
 
@@ -3156,7 +4987,19 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 		
+
+
+
+
+
+
+
+
 
 
 
@@ -3172,7 +5015,19 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
+
+
+
+
 	/**
+
+
+
+
 
 
 
@@ -3180,7 +5035,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 	 *
+
+
+
+
 
 
 
@@ -3188,7 +5051,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 	 *
+
+
+
+
 
 
 
@@ -3196,7 +5067,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 	 *
+
+
+
+
 
 
 
@@ -3204,7 +5083,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 	 *
+
+
+
+
 
 
 
@@ -3212,7 +5099,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 	 */
+
+
+
+
 
 
 
@@ -3224,11 +5119,27 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
+
+
+
+
 		if ( ! isset( $this->plugin_screen_hook_suffix ) ) {
 
 
 
+
+
+
+
 			return;
+
+
+
+
 
 
 
@@ -3238,9 +5149,21 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
+
+
 	$screen	 = get_current_screen();
 
+
+
 //echo $screen->id ;
+
+
+
+
 
 
 
@@ -3248,35 +5171,71 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 			{
+
+
 
 				wp_enqueue_script( 'dudapro_tbl', plugin_dir_url( __FILE__ ) . 'js/creative_table_ajax-1.4.js' );
 
+
+
 				wp_enqueue_script( 'dudapro_jquery', plugin_dir_url( __FILE__ ) . 'js/jquery-1.8.2.min.js' );
+
+
 
 				wp_enqueue_script( 'dudapro_custom_js', plugin_dir_url( __FILE__ ) . 'js/my_javascript.js' );
 
 
 
+
+
+
+
 				wp_register_style( 'dudapro_admin_css', plugin_dir_url( __FILE__ ) . 'styles/creative/style.css', false, '1.0.0' );
+
+
 
 				wp_enqueue_style( 'dudapro_admin_css' );
 
+
+
 				
+
+
+
+
 
 
 
 				}
 
+
+
 				
+
+
 
 //echo $screen->id;
 
 
 
+
+
+
+
 //    
 
+
+
 			
+
+
+
+
 
 
 
@@ -3286,21 +5245,29 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
+
+
  //wp_enqueue_script( 'my_custom_script', plugin_dir_url( __FILE__ ) . 'admin/creative_table_ajax-1.4.js' );
+
+
+
+
 
 
 
  
 
+
+
     		
 
 
 
-		
 
-
-
-		
 
 
 
@@ -3308,7 +5275,31 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 		
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+		
+
+
+
+
 
 
 
@@ -3316,11 +5307,27 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 	//	wp_enqueue_script(  $this->plugin_slug .'-admin-jquery-ui-js', '//code.jquery.com/ui/1.11.0/jquery-ui.js', array(), '1.0.0', false);		
 
 
 
+
+
+
+
 	}
+
+
+
+
+
+
+
+
 
 
 
@@ -3332,7 +5339,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 	 * Register the administration menu for this plugin into the WordPress Dashboard menu.
+
+
+
+
 
 
 
@@ -3340,7 +5355,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 	 * @since    1.0.0
+
+
+
+
 
 
 
@@ -3348,9 +5371,19 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 	public function add_plugin_admin_menu() {
 
+
+
 		add_action( 'wp_enqueue_style', array( $this, 'admin_styles' ) );
+
+
+
+
 
 
 
@@ -3362,7 +5395,19 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
+
+
+
+
 		/*
+
+
+
+
 
 
 
@@ -3370,7 +5415,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 		 *
+
+
+
+
 
 
 
@@ -3378,7 +5431,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 		 *
+
+
+
+
 
 
 
@@ -3386,7 +5447,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 		 *
+
+
+
+
 
 
 
@@ -3394,7 +5463,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 		 *
+
+
+
+
 
 
 
@@ -3402,7 +5479,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 		 * - Change 'Menu Text' to the text for menu item for the plugin settings page
+
+
+
+
 
 
 
@@ -3410,7 +5495,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 		 *   For reference: http://codex.wordpress.org/Roles_and_Capabilities
+
+
+
+
 
 
 
@@ -3418,7 +5511,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 		$this->plugin_screen_hook_suffix = add_options_page(
+
+
+
+
 
 
 
@@ -3426,7 +5527,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 			__( 'DudaPro', $this->plugin_slug ),
+
+
+
+
 
 
 
@@ -3434,11 +5543,23 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 			$this->plugin_slug,
 
 
 
+
+
+
+
 			array( $this, 'display_plugin_admin_page' )
+
+
+
+
 
 
 
@@ -3450,7 +5571,19 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
+
+
+
+
 	}
+
+
+
+
 
 
 
@@ -3458,7 +5591,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
 	 /**
+
+
+
+
 
 
 
@@ -3466,7 +5607,15 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
    * 
+
+
+
+
 
 
 
@@ -3474,11 +5623,23 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
    */
 
 
 
+
+
+
+
   public function load_includes() {
+
+
+
+
 
 
 
@@ -3490,7 +5651,31 @@ if ($results["status"]=="Active") {
 
 
 
+
+
+
+
+
+
+
+
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3510,6 +5695,10 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
 }
 
 
@@ -3530,7 +5719,31 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	/**
+
+
+
+
 
 
 
@@ -3538,7 +5751,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
 	 *
+
+
+
+
 
 
 
@@ -3546,7 +5767,23 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
 	 */
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3562,7 +5799,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
 	 * Add settings action link to the plugins page.
+
+
+
+
 
 
 
@@ -3570,11 +5815,23 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
 	 * @since    1.0.0
 
 
 
+
+
+
+
 	 */
+
+
+
+
 
 
 
@@ -3586,7 +5843,19 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
+
+
+
+
 		return array_merge(
+
+
+
+
 
 
 
@@ -3594,7 +5863,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
 				'settings' => '<a href="' . admin_url( 'options-general.php?page=' . $this->plugin_slug ) . '">' . __( 'Settings', $this->plugin_slug ) . '</a>'
+
+
+
+
 
 
 
@@ -3602,11 +5879,27 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
 			$links
 
 
 
+
+
+
+
 		);
+
+
+
+
+
+
+
+
 
 
 
@@ -3622,7 +5915,19 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
+
+
+
+
 	/**
+
+
+
+
 
 
 
@@ -3630,11 +5935,23 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
 	 *           lifecycle that WordPress fires.
 
 
 
+
+
+
+
 	 *
+
+
+
+
 
 
 
@@ -3642,7 +5959,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
 	 *           Reference:  http://codex.wordpress.org/Plugin_API/Action_Reference
+
+
+
+
 
 
 
@@ -3650,7 +5975,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
 	 * @since    1.0.0
+
+
+
+
 
 
 
@@ -3658,7 +5991,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
 	public function action_method_name() {
+
+
+
+
 
 
 
@@ -3666,7 +6007,19 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
 	}
+
+
+
+
+
+
+
+
 
 
 
@@ -3678,7 +6031,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
 	 * NOTE:     Filters are points of execution in which WordPress modifies data
+
+
+
+
 
 
 
@@ -3686,7 +6047,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
 	 *
+
+
+
+
 
 
 
@@ -3694,7 +6063,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
 	 *           Reference:  http://codex.wordpress.org/Plugin_API/Filter_Reference
+
+
+
+
 
 
 
@@ -3702,7 +6079,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
 	 * @since    1.0.0
+
+
+
+
 
 
 
@@ -3710,7 +6095,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
 	public function filter_method_name() {
+
+
+
+
 
 
 
@@ -3718,11 +6111,23 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
 	}
 
 
 
+
+
+
+
 	
+
+
+
+
 
 
 
@@ -3730,7 +6135,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
     $whmcsurl = "http://cncwebsolutions.com/clients/";
+
+
+
+
 
 
 
@@ -3738,7 +6151,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
     $check_token = time().md5(mt_rand(1000000000,9999999999).$licensekey);
+
+
+
+
 
 
 
@@ -3746,7 +6167,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
     $usersip = isset($_SERVER['SERVER_ADDR']) ? $_SERVER['SERVER_ADDR'] : $_SERVER['LOCAL_ADDR'];
+
+
+
+
 
 
 
@@ -3754,7 +6183,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
     $allowcheckfaildays = 5; # How many days to allow after local key expiry before blocking access if connection cannot be made
+
+
+
+
 
 
 
@@ -3762,7 +6199,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
     if ($localkey) {
+
+
+
+
 
 
 
@@ -3770,7 +6215,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
 		$localdata = substr($localkey,0,strlen($localkey)-32); # Extract License Data
+
+
+
+
 
 
 
@@ -3778,7 +6231,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
         if ($md5hash==md5($localdata.$licensing_secret_key)) {
+
+
+
+
 
 
 
@@ -3786,7 +6247,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
     		$md5hash = substr($localdata,0,32); # Extract MD5 Hash
+
+
+
+
 
 
 
@@ -3794,7 +6263,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
     		$localdata = base64_decode($localdata);
+
+
+
+
 
 
 
@@ -3802,7 +6279,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
             $originalcheckdate = $localkeyresults["checkdate"];
+
+
+
+
 
 
 
@@ -3810,7 +6295,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
                 $localexpiry = date("Ymd",mktime(0,0,0,date("m"),date("d")-$localkeydays,date("Y")));
+
+
+
+
 
 
 
@@ -3818,7 +6311,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
                     $localkeyvalid = true;
+
+
+
+
 
 
 
@@ -3826,7 +6327,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
                     $validdomains = explode(",",$results["validdomain"]);
+
+
+
+
 
 
 
@@ -3834,7 +6343,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
                         $localkeyvalid = false;
+
+
+
+
 
 
 
@@ -3842,11 +6359,23 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
                         $results = array();
 
 
 
+
+
+
+
                     }
+
+
+
+
 
 
 
@@ -3854,7 +6383,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
                     if (!in_array($usersip, $validips)) {
+
+
+
+
 
 
 
@@ -3862,7 +6399,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
                         $localkeyresults["status"] = "Invalid";
+
+
+
+
 
 
 
@@ -3870,7 +6415,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
                     }
+
+
+
+
 
 
 
@@ -3878,7 +6431,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
                         $localkeyvalid = false;
+
+
+
+
 
 
 
@@ -3886,7 +6447,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
                         $results = array();
+
+
+
+
 
 
 
@@ -3894,7 +6463,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
                 }
+
+
+
+
 
 
 
@@ -3902,11 +6479,23 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
         }
 
 
 
+
+
+
+
     }
+
+
+
+
 
 
 
@@ -3914,7 +6503,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
         $postfields["licensekey"] = $licensekey;
+
+
+
+
 
 
 
@@ -3922,7 +6519,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
         $postfields["ip"] = $usersip;
+
+
+
+
 
 
 
@@ -3930,7 +6535,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
         if ($check_token) $postfields["check_token"] = $check_token;
+
+
+
+
 
 
 
@@ -3938,7 +6551,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
             $ch = curl_init();
+
+
+
+
 
 
 
@@ -3946,7 +6567,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
             curl_setopt($ch, CURLOPT_POST, 1);
+
+
+
+
 
 
 
@@ -3954,7 +6583,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
             curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+
+
+
+
 
 
 
@@ -3962,7 +6599,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
             $data = curl_exec($ch);
+
+
+
+
 
 
 
@@ -3970,7 +6615,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
         } else {
+
+
+
+
 
 
 
@@ -3978,7 +6631,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
 	        if ($fp) {
+
+
+
+
 
 
 
@@ -3986,7 +6647,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
                 foreach ($postfields AS $k=>$v) {
+
+
+
+
 
 
 
@@ -3994,7 +6663,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
                 }
+
+
+
+
 
 
 
@@ -4002,7 +6679,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
         		$header.="Host: ".$whmcsurl."\r\n";
+
+
+
+
 
 
 
@@ -4010,7 +6695,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
         		$header.="Content-length: ".@strlen($querystring)."\r\n";
+
+
+
+
 
 
 
@@ -4018,7 +6711,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
         		$header.=$querystring;
+
+
+
+
 
 
 
@@ -4026,7 +6727,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
         		@stream_set_timeout($fp, 20);
+
+
+
+
 
 
 
@@ -4034,7 +6743,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
         		$status = @socket_get_status($fp);
+
+
+
+
 
 
 
@@ -4042,7 +6759,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
         		    $data .= @fgets($fp, 1024);
+
+
+
+
 
 
 
@@ -4050,7 +6775,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
         		}
+
+
+
+
 
 
 
@@ -4058,11 +6791,23 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
             }
 
 
 
+
+
+
+
         }
+
+
+
+
 
 
 
@@ -4070,7 +6815,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
             $localexpiry = date("Ymd",mktime(0,0,0,date("m"),date("d")-($localkeydays+$allowcheckfaildays),date("Y")));
+
+
+
+
 
 
 
@@ -4078,7 +6831,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
                 $results = $localkeyresults;
+
+
+
+
 
 
 
@@ -4086,7 +6847,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
                 $results["status"] = "Invalid";
+
+
+
+
 
 
 
@@ -4094,11 +6863,23 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
                 return $results;
 
 
 
+
+
+
+
             }
+
+
+
+
 
 
 
@@ -4106,7 +6887,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
             preg_match_all('/<(.*?)>([^<]+)<\/\\1>/i', $data, $matches);
+
+
+
+
 
 
 
@@ -4114,7 +6903,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
             foreach ($matches[1] AS $k=>$v) {
+
+
+
+
 
 
 
@@ -4122,11 +6919,23 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
             }
 
 
 
+
+
+
+
         }
+
+
+
+
 
 
 
@@ -4134,7 +6943,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
             if ($results["md5hash"]!=md5($licensing_secret_key.$check_token)) {
+
+
+
+
 
 
 
@@ -4142,7 +6959,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
                 $results["description"] = "MD5 Checksum Verification Failed";
+
+
+
+
 
 
 
@@ -4150,11 +6975,23 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
             }
 
 
 
+
+
+
+
         }
+
+
+
+
 
 
 
@@ -4162,7 +6999,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
             $results["checkdate"] = $checkdate;
+
+
+
+
 
 
 
@@ -4170,7 +7015,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
             $data_encoded = base64_encode($data_encoded);
+
+
+
+
 
 
 
@@ -4178,7 +7031,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
             $data_encoded = strrev($data_encoded);
+
+
+
+
 
 
 
@@ -4186,7 +7047,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
             $data_encoded = wordwrap($data_encoded,80,"\n",true);
+
+
+
+
 
 
 
@@ -4194,7 +7063,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
         }
+
+
+
+
 
 
 
@@ -4202,7 +7079,15 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
     }
+
+
+
+
 
 
 
@@ -4210,11 +7095,25 @@ function dudapro_admin_init() {
 
 
 
+
+
+
+
     return $results;
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
 
 
 
@@ -4222,33 +7121,65 @@ function dudapro_admin_init() {
 
 public function cnc_dudapro_show_permissions()
 
+
+
 {
+
+
 
 	
 
+
+
 	$options = get_option('dudapro_api_settings');
+
+
 
     $apissoendpoint = $options['apissoendpoint'];
 
+
+
 	$options = get_option('dudapro_api_settings');
 
+
+
     $duda_username = $options['apiusername'];
+
+
 
 	$duda_password = $options['apipassword'];
 
 
 
+
+
+
+
 	$path = $_SERVER['DOCUMENT_ROOT'];
 
+
+
 	global $display_name , $user_email;
+
+
 
     get_currentuserinfo();
 
 
 
+
+
+
+
 	
 
+
+
 	$args = array(
+
+
+
+
 
 
 
@@ -4256,7 +7187,15 @@ public function cnc_dudapro_show_permissions()
 
 
 
+
+
+
+
 			'Authorization' => 'Basic ' . base64_encode( $duda_username . ':' . $duda_password )
+
+
+
+
 
 
 
@@ -4264,9 +7203,19 @@ public function cnc_dudapro_show_permissions()
 
 
 
+
+
+
+
 		);
 
+
+
 	
+
+
+
+
 
 
 
@@ -4274,57 +7223,119 @@ public function cnc_dudapro_show_permissions()
 
 
 
+
+
+
+
 	
+
+
+
+
 
 
 
 	$data = json_decode($json, true);
 
+
+
 	$error = '';
+
+
+
+
 
 
 
 if (is_array($data))
 
+
+
 		{
+
+
 
 	foreach ( $data as $group ) {
 
+
+
 //	Array ( [0] => Array ( [group_name] => administrator [color] => rgb(253,113,34) [title] => Admin [permissions] => Array ( [0] => EDIT_SITES [1] => CREATE_SITES [2] => DELETE_SITES [3] => API [4] => PRO_SETTINGS [5] => MANAGE_STAFF [6] => STATS [7] => E_COMMERCE [8] => MARKETING [9] => REPUBLISH [10] => PUBLISH [11] => DEV_MODE [12] => CUSTOM_DOMAIN [13] => MANAGE_CUSTOMERS ) ) [1] => Array ( [group_name] => salesman [color] => rgb(36,206,151) [title] => Sales [permissions] => Array ( [0] => REPUBLISH [1] => CREATE_SITES [2] => STATS [3] => EDIT_SITES [4] => E_COMMERCE [5] => MARKETING ) ) [2] => Array ( [group_name] => designer [color] => rgb(21,193,191) [title] => Designer [permissions] => Array ( [0] => REPUBLISH [1] => CREATE_SITES [2
+
+
 
 	$output .= '<dl style="margin-bottom: 1em;">';
 
 
 
+
+
+
+
   foreach ( $group as $key => $value ) {
 
+
+
     $output .= "<dt>$key</dt><dd>$value</dd>";
+
+
 
   }
 
 
 
+
+
+
+
    $output .= '</dl>';
 
-		
+
 
 		
+
+
+
+		
+
+
 
 	}
 
+
+
 		
+
+
 
 	  
 
+
+
 	}
+
+
+
+
 
 
 
 return  $output;	
 
+
+
 	
 
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -4334,25 +7345,59 @@ return  $output;
 
 // End Check Function
 
+
+
 public function dudapro_mobile_sites($email){
 
+
+
 	$options = get_option('dudapro_api_settings');
+
+
 
     $apissoendpoint = $options['apissoendpoint'];
 
+
+
 	$options = get_option('dudapro_api_settings');
 
+
+
     $duda_username = $options['apiusername'];
+
+
 
 	$duda_password = $options['apipassword'];
 
 
 
+
+
+
+
 	$path = $_SERVER['DOCUMENT_ROOT'];
+
+
 
 	global $display_name , $user_email;
 
+
+
     get_currentuserinfo();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4370,7 +7415,15 @@ $args = array(
 
 
 
+
+
+
+
 		'headers' => array(
+
+
+
+
 
 
 
@@ -4378,13 +7431,27 @@ $args = array(
 
 
 
+
+
+
+
 			)
+
+
+
+
 
 
 
 		);
 
+
+
 	
+
+
+
+
 
 
 
@@ -4392,21 +7459,41 @@ $args = array(
 
 
 
+
+
+
+
 	
+
+
+
+
 
 
 
 	$data = json_decode($json, true);
 
+
+
 $error = '';
+
+
+
+
 
 
 
  if ( is_user_logged_in() ) 
 
+
+
  { 
 
+
+
    
+
+
 
 //print_r($data); exit();
 
@@ -4414,119 +7501,240 @@ $error = '';
 
 
 
+
+
+
+
+
+
 if ($data['error_code'] == 'ResourceNotExist')
 
+
+
 {
+
+
 
 	$message .= 'No sites found under this email addres, ' . $user_email ;
 
-	
+
 
 	
+
+
+
+	
+
+
 
 	}
 
+
+
 	else
+
+
 
 	{
 
+
+
 		if (empty($data))
 
+
+
 			{
+
+
 
 				$message .= 'no sites found <br/>';
 
+
+
 		
+
+
 
 			}
 
+
+
 			else
+
+
 
 			{
 
+
+
 				$message .= '<ul>';
 
+
+
 if (is_array($data))
+
 {
+
 				foreach ( $data as $key => $value )
+
+
 
 				{
 
+
+
 					
+
+
 
 					if ($key == 'site_name') 
 
+
+
 					{
+
+
 
 						$sso_link = $this->generateSSOLink($value,$user_email);
 
+
+
 					 $site_name = $value;	
+
+
 
 					}
 
+
+
 					
+
+
 
 					if ($key == 'original_site_url') 
 
+
+
 					{
+
+
 
 					//	
 
 
 
+
+
+
+
 						$message .= '<li><a href="'.  $sso_link .  '">'. $value . '</a></li>';
+
+
 
 					
 
+
+
 					}
 
+
+
 				}
+
 }
+
+
 
 				$message .= '</ul>';
 
+
+
 				
+
+
 
 			
 
+
+
 			}
+
+
 
 	 } 
 
+
+
  }
 
+
+
  
+
+
 
  else {  
 
+
+
  $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+
 
  $args = array(
 
+
+
         'redirect' => $actual_link, 
+
+
 
 		'label_username' => __( 'Email Address' ),
 
+
+
         'label_log_in' => __( 'Log in to view your mobile sites' ),
+
+
 
         'remember' => true
 
+
+
     );
+
+
 
     wp_login_form( $args );
 
- 
+
 
  
+
+
+
+ 
+
+
 
    
 
+
+
  }
+
+
 
 	return $message;
 
-}
+
 
 }
+
+
+
+}
+
+
 
 ?>

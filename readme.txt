@@ -4,9 +4,9 @@ Tags: dudapro, duda, api, mobile, multi-screen
 
 Requires at least: 3.8
 
-Tested up to: 4.1
+Tested up to: 4.1.1
 
-Stable tag: 2.6
+Stable tag: 2.6.11
 
 
 
@@ -90,11 +90,11 @@ Features:
 
 
 
-1. Download `duda-pro.zip`
+1. Download the plugin
 
-2. Extract the `plugin-name` directory to your computer
+2. Extract the plugin directory to your computer
 
-3. Upload the `plugin-name` directory to the `/wp-content/plugins/` directory
+3. Upload the plugine directory to the `/wp-content/plugins/` directory
 
 4. Activate the plugin in the Plugin dashboard
 
@@ -108,10 +108,7 @@ Features:
 
 = It's not working? =
 
-Under the Settings there is a section to show jQuery or not (yes/no) if its not working change this and try it again. Now days most templates include jquery but some done so here you can toggle it on and off depending on your websites needs.
-
-
-
+Make sure the shortcodes are correct and you have entered your API information correctly.
 
 
 = Does this work with any Dudamobile plan =
@@ -136,7 +133,7 @@ Absolutely not! Just install the plugin, add your api settings in the settings t
 
 = Does this use all the API functions =
 
-No but that is the intention.  We are adding payment gateways next and then will be adding account related functionality. 
+No but the premium version uses most of them! Check it out at 
 
 
 
@@ -145,6 +142,15 @@ No but that is the intention.  We are adding payment gateways next and then will
 
 
 == Changelog ==
+
+
+= 2.6.11 =
+
+* Send clients custom emails
+
+* Added a login shortcode for clients to login
+
+* WP users are created for each user that creates a site preview
 
 
 
