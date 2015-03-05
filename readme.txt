@@ -4,25 +4,30 @@ Tags: dudapro, duda, api, mobile, multi-screen
 
 Requires at least: 3.8
 
-Tested up to: 4.01
+Tested up to: 4.1
 
-Stable tag: 2.1.7
+Stable tag: 2.6
 
 
 
-This plugin extends functionality so you can include duda multi-screen and mobile preview in your own site.
+This plugin extends functionality so you can include duda multi-screen and mobile preview in your own site. 
 
 
 
 == Description ==
 
-
+This readme file is no longer updated, read the readme form the WordPress update instead. Thanks.
+--------------------------------------
 
 This pluign is the "missing duda wordpress plugin" that duda never released.  Currently it allow you to embed the mobile
 
 and multi-screen funtionality on your site so clients can create sites within your own branded website.
 
-Showing mobile & multiscreen sites is what this plugin do.  If you purchase a license it unlocks other items suck as, leads management, form contact results, account management, paypal & stripe payment options for mobile.  This plugin is updated monthly.
+
+
+There are many more feature that will be popping up every week. Be sure to check out our roadmap to see what is coming 
+
+up next. http://cncwebsolutions.com/blog/category/dudapro-plugin/
 
 
 
@@ -36,16 +41,7 @@ Features:
 
 * Mobile Preview
 
-* List accounts with thumbnails
-
-Paid Features add:
-
-
-* Account Managment - easily unsubscribe and delete accounts
-
-* Leads Management - capture email & url of sites built
-
-* Payment options - Paypal & Strip for mobile (D1 support coming sooo)
+* List all accounts and show their previw links
 
 * and more coming soon!
 
@@ -154,12 +150,6 @@ No but that is the intention.  We are adding payment gateways next and then will
 == Changelog ==
 
 
-= 2.1.7 =
-
-* Both Duda Mobile and Duda One sites are included
-* Easily create previews of mobile sites or mobile comparisonsss
-* Show D1 templates and allow users to create a site
-* D1 users are created and then redirected to start editing their site
 
 
 

@@ -1,0 +1,1604 @@
+/* CSS Document */
+
+#cncForm { 
+
+
+
+
+
+
+
+  width: 100%;
+
+
+
+
+
+
+
+    margin: 0 auto;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cncSubmit{
+
+
+
+
+
+
+
+	position:relative;
+
+
+
+
+
+
+
+	top:-37px;
+
+
+
+
+
+
+
+	margin-left:360px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#cncifrmsite{
+
+
+
+
+
+
+
+	width: 200px;
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cnc_url{
+
+
+
+
+
+
+
+	border:2px solid #456879;
+
+
+
+
+
+
+
+	border-radius:10px;
+
+
+
+
+
+
+
+	height: 22px;
+
+
+
+
+
+
+
+	width: 230px;	
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cnc_submit{
+
+
+
+
+
+
+
+	padding:3px;
+
+
+
+
+
+
+
+	font-weight:bold;
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+#cnc_dudaone_wrapper{
+position:relative;
+top:30px;
+	
+
+}
+
+
+
+.cnc_dudaone_thumb{
+
+	float:left;
+
+	width:250;
+
+	padding:5px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#cnc_dudaone_main{
+margin-top:50px;
+
+
+position:relative;
+
+
+	width:100%;
+}
+
+
+
+
+
+
+
+ input[type="email"], input[type="url"]
+{
+margin-right:20px !important;
+
+
+
+
+-webkit-border-radius: 5px !important;
+
+
+
+
+-moz-border-radius: 5px !important;
+
+
+
+
+border-radius: 5px !important;
+
+
+
+
+border:solid 1px black !important;
+
+
+
+
+    padding:10px !important;
+	
+}
+
+
+
+
+
+
+
+input.cnc_dudaone_input{
+
+
+
+
+
+
+
+	
+
+
+
+margin-right:20px;
+
+
+
+-webkit-border-radius: 5px;
+
+
+
+-moz-border-radius: 5px;
+
+
+
+border-radius: 5px;
+
+
+
+border:solid 1px black;
+
+
+
+    padding:10px;}
+
+
+
+
+
+
+
+input.cnc_dudaone_input_url{
+
+
+
+
+
+
+
+margin-right:20px;
+
+
+
+-webkit-border-radius: 5px;
+
+
+
+-moz-border-radius: 5px;
+
+
+
+border-radius: 5px;	
+
+
+
+border:solid 1px black;
+
+
+
+    padding:10px;
+
+
+
+z-index:9045;
+
+
+
+	
+
+
+
+	}
+
+
+
+
+
+
+
+.cnc_dudaone_button{
+
+
+
+margin-right:20px;
+
+
+
+-webkit-border-radius: 5px;
+
+
+
+-moz-border-radius: 5px;
+
+
+
+border-radius: 5px;	
+
+
+
+border:solid 1px black;
+
+
+
+    padding:10px;
+
+
+
+z-index:9045;
+
+
+
+
+
+
+
+	}
+
+
+
+
+
+
+
+#cnc_dudapro_logo{
+
+
+
+
+
+
+
+	margin-top:12px;
+
+
+
+
+
+
+
+	padding-right:10px;
+
+
+
+
+
+
+
+	float:left;
+
+
+
+
+
+
+
+	width:50px;
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#website_form {
+
+
+
+
+
+
+
+	width: 100%;
+
+
+
+
+
+
+
+	margin-right: auto;
+
+
+
+
+
+
+
+	margin-left: auto;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+#website_form legend {
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+#website_form label {
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+#website_form label span {
+
+
+
+
+
+
+
+	float: left;
+
+
+
+
+
+
+
+	width: 100px;
+
+
+
+
+
+
+
+	color: #666666;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+#website_form input {
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+#website_form textarea {
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.submit_btn {
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.submit_btn:hover {
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.success {
+
+
+
+
+
+
+
+	background: #CFFFF5;
+
+
+
+
+
+
+
+	padding: 10px;
+
+
+
+
+
+
+
+	margin-bottom: 10px;
+
+
+
+
+
+
+
+	border: 1px solid #B9ECCE;
+
+
+
+
+
+
+
+	border-radius: 5px;
+
+
+
+
+
+
+
+	font-weight: normal;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.error {
+
+
+
+
+
+
+
+	background: #FFDFDF;
+
+
+
+
+
+
+
+	padding: 10px;
+
+
+
+
+
+
+
+	margin-bottom: 10px;
+
+
+
+
+
+
+
+	border: 1px solid #FFCACA;
+
+
+
+
+
+
+
+	border-radius: 5px;
+
+
+
+
+
+
+
+	font-weight: normal;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+#mobilePreview { 
+
+
+
+
+
+
+
+	width: 960px;
+
+
+
+
+
+
+
+	height: 950px;
+
+
+
+
+
+
+
+	margin: 0 auto;
+
+
+
+
+
+
+
+	background-color: #CCC;
+
+
+
+
+
+
+
+	display: block;
+
+
+
+
+
+
+
+	margin-top: 30px;
+
+
+
+
+
+
+
+	border: none;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+legend {
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.centerCNC {
+
+
+
+
+
+
+
+	text-align: center;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.centerCNC > div { /* N.B. child combinators don't work in IE7 or less */
+
+
+
+
+
+
+
+	display: inline-block;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+fieldset{
+
+
+
+
+
+
+
+border:none !important;	
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#paypalexpress{
+
+
+
+
+
+
+
+	padding-top:0px;
+
+
+
+
+
+
+
+	text-align:center;
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+/** button code **/
+
+
+
+.dudaproBtn {
+
+
+
+ 
+
+
+
+}
+
+
+
+
+
+
+
+.dudaproBtn:hover {
+
+
+
+  
+
+
+
+
+
+
+
+} 
+
+
+
+
+
+
+
+.dudapro_listing{
+
+
+
+	vertical-align: top;
+
+
+
+	height:125px;
+
+
+
+	
+
+
+
+	
+
+
+
+}
+
+
+
+
+
+
+
+.dudapro_listing a{
+
+
+
+text-decoration:none;	
+
+
+
+border-bottom:none !important;
+
+
+
+font-size:12pt;
+
+
+
+font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.dudapro_listing.img{
+
+
+
+    float:left;
+
+
+
+	clear:inherit;
+
+
+
+	
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+div.dudapro-show-image {
+
+
+
+    position: relative;
+
+
+
+    float:left;
+
+
+
+    margin:5px;
+
+
+
+	background-color:#999999;
+
+
+
+	border:thin;
+
+
+
+	border-style:solid;
+
+
+
+	border-color:#888888;
+
+
+
+	box-shadow: 7px 7px 5px #888888;
+
+margin-bottom:20px;
+
+
+
+
+
+}
+
+
+
+div.dudapro-show-image:hover img{
+
+
+
+    opacity:0.5;	
+
+
+
+}
+
+
+
+div.dudapro-show-image:hover .dudabutton {
+
+
+
+	padding-top:10px;
+
+
+
+	padding-bottom:10px;
+
+
+
+    display: block;
+
+
+
+	width:90px;
+
+
+
+		box-shadow: 4px 4px 5px #000;
+
+
+
+
+
+
+
+}
+
+
+
+div.dudapro-show-image .dudabutton {
+
+
+
+    position:absolute;
+
+
+
+    top:70px;
+
+
+
+    display:none;
+
+
+
+	color:#fff;
+
+	
+
+	font-size:14pt;
+
+
+
+}
+
+
+
+div.dudapro-show-image .dudabutton.start {
+
+
+
+    top:70px;
+
+
+
+    left:0;
+
+
+
+	margin-left:15px;
+
+	
+
+	background-color:#FC7118;
+
+
+
+}
+
+
+
+div.dudapro-show-image .dudabutton.preview {
+
+
+
+    top:70px;
+
+
+
+    right:0;
+
+
+
+	margin-right:15px;
+
+
+
+	background-color:#727272;
+
+
+
+}
+
+
+
+
+
+
+
+.dudabutton {
+
+
+
+ padding: 8px;
+
+
+
+    display: inline;
+
+
+
+    border: none;
+
+
+
+    color: #fff;
+
+
+
+    cursor: pointer;
+
+
+
+
+
+    border-radius: 5px;
+
+
+
+    -moz-border-radius: 5px;
+
+
+
+    -webkit-border-radius: 5px;
+
+
+
+   
+
+
+
+	 background-color: #323232; 
+
+
+
+	 text-align:center;
+
+	 
+
+	 text-transform:capitalize;
+
+
+
+    }
+
+
+
+	
+
+
+
+.dudaproTitle
+
+
+
+{
+
+
+
+	font-weight:bold;
+
+
+
+	font-size:x-large;
+
+
+
+	
+
+
+
+	|}
+
+
+
+	
+
+
+
+.dudaproBuild{
+
+
+
+	position:relative;
+
+
+
+
+
+
+	margin-bottom:18px;
+
+
+
+	
+
+
+
+}
+
+
+
+a.dudabutton.preview {color:#FFF !important; }
+
+
+
+.d1Cateogry{
+	
+	
+
+	margin-right:23px;
+
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+
+    -webkit-border-radius: 5px;
+	 background-color: #e6e9ec; 
+
+	 text-decoration:none !important;
+
+	 text-align:center;
+
+	 text-transform:capitalize;
+
+	 padding:10px;
+color:##8F9497;
+
+display: inline-table;
+padding-top: 5px;
+margin-top:8px;
+width:100px;
+
+
+}
+
+a.d1Category{
+	 text-decoration:none;
+	 color:##8F9497;
+	 padding-bottom:20px;
+
+	
+}
+
+a.d1Cateogry:hover, a.d1Cateogry:active{
+	 background-color: #FC7118; 
+	 color:#fff;
+
+}
+
+.categoryActive {
+	 background-color: #FC7118; 
+	 color:#fff;
+
+}
+
+
+.dudapro-prod-title{
+
+	font-size:18px;
+
+	
+
+}
+
+.fancybox-nav {
+	margin-top:50px !important;
+	height:70% !important;
+	
+}
+
+#dudaProCategories{
+	position:relative;
+	
+margin-bottom:50px;	
+}
+
+.dudaPreviewLink{
+	float:right;
+	text-decoration:underline;
+	color:#999999;
+	
+}
+
+a.dudaPreviewLinkColor{
+	color:#999999;
+}
+
+.cnc_dudapro_tile {
+    width:250px;
+    float:right;
+ }
+ 
+.cnc_dudapro_d1_button {
+	float:right;
+    width:250px;
+ }
+ 
+ .dudaPro_row2{
+	 margin-top:5px;
+	 
+ }
+ 
+ .cnc_dudapro_lbl{
+	position:relative;
+	
+	font-size:18px;
+	top:15px;
+	 
+ }
+ 
+ .cnc_dudapro_lbl2{
+	position:relative;
+	 top:12px;
+	 padding-right:220px;
+ }
+ 
+ #categoryWrapper{
+	padding-left:10px; 
+	
+ }
+ 
+ 
+ .clearDudaPro{clear:both;}
+ 
+ input[type="email"], input[type="url"]
+ {
+	  width:250px !important; 
+ }
+ 
+ .fancybox-nav span {
+  visibility: visible !important;
+}
+
+.fancybox-next span {
+    right: -20px !important;
+}
+
+.fancybox-prev span {
+    left: -18px !important;
+}
+
