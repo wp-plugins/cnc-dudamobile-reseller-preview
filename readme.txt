@@ -10,24 +10,19 @@ Stable tag: 2.6
 
 
 
-This plugin extends functionality so you can include duda multi-screen and mobile preview in your own site. 
+This plugin extends functionality so you can include duda multi-screen and mobile preview in your own site. Upgrade to the premium version to cpature leads, accept payments, delete accounts, receive support @ more!
 
 
 
 == Description ==
 
-This readme file is no longer updated, read the readme form the WordPress update instead. Thanks.
---------------------------------------
 
 This pluign is the "missing duda wordpress plugin" that duda never released.  Currently it allow you to embed the mobile
 
-and multi-screen funtionality on your site so clients can create sites within your own branded website.
+and multi-screen funtionality on your site so clients can create sites within your own branded website. It also creates WordPress users
 
+so they can login from your website and edit their website.  
 
-
-There are many more feature that will be popping up every week. Be sure to check out our roadmap to see what is coming 
-
-up next. http://cncwebsolutions.com/blog/category/dudapro-plugin/
 
 
 
@@ -35,15 +30,17 @@ Features:
 
 
 
-* Multi-Screen Support
+* Show & Create Multi-Screen sites
 
-* Mobile Comparison
+* Show & Create Mobile Sites
 
-* Mobile Preview
+* Show Mobile Preview or Mobile Comparison
 
-* List all accounts and show their previw links
+* Cretes WordPress accounts 
 
-* and more coming soon!
+* Creates a login page so they can login and then edit their mobile or D1 site
+
+* more features in the premium version!
 
 
 
@@ -125,13 +122,13 @@ Yes! Now that all resellers are DudaPro we can all take advantage of this!
 
 = It won't work, what could be wrong? =
 
-Make sure your license key is active.  Also make sure you enter all the  Duda API settings.  If you still need help contact support@cncwebsolutions.com
+Make sure you enter all the  Duda API settings.  
 
 
 
 = Do I have to edit code to make this work? =
 
-Absolutely not! Just install the plugin, add your api settings in the settings tab and then use the shortcode [dudapro_mobile] or [dudapro_multiscreen]  Simple!
+Absolutely not! Just install the plugin, add your api settings in the settings tab and then use the shortcodes [dudapro_mobile]  [dudapro_multiscreen]  [dudapro_client_login] Simple!
 
 
 
