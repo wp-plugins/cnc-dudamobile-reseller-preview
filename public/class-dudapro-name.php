@@ -356,7 +356,7 @@ return $output;
 public function cnc_dudaone_scripts() {
 
 	$pluginsURI = plugins_url('/cnc-dudamobile-reseller-preview/');
-	wp_enqueue_script( 'sample-pg-name',  '/example.js', array(), '1.0.0', true );
+	
 
 
 	wp_register_style('cnc_dpro_css', $pluginsURI . 'public/assets/css/public.css' ); 
