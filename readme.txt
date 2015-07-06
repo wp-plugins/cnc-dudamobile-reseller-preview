@@ -6,7 +6,7 @@ Requires at least: 3.8
 
 Tested up to: 4.1.1
 
-Stable tag: 2.6.11
+Stable tag: 2.6.12
 
 
 

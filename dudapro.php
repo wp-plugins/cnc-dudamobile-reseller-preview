@@ -24,7 +24,7 @@
 
  * Description:       Extend your DudaPro services by bringing features to your own website
 
- * Version:           2.6.11
+ * Version:           2.6.12
 
  * Author:            Programming Genius
 
