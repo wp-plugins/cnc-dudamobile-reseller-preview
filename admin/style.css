@@ -1,0 +1,206 @@
+/* SEARCH */
+#ct_search_container{
+    position: relative;
+    float: left;
+}
+
+#ct_search{
+    width: 200px;
+    padding: 0px 25px 0px 5px;
+    height: 18px;
+}
+
+#ct_search_value{
+    position: absolute;
+    top: 0px;
+    left: 7px;
+    opacity:0;
+    filter:alpha(opacity=0);
+    z-index: 300;
+}
+
+#ct_advanced_search{
+    position: absolute;
+    top: 3px;
+    left: 210px;
+    z-index: 300;
+    width: 16px;
+    height: 16px;
+    background: url(images/advanced_search.png);
+}
+
+#ct_loader{
+    display: none;
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+    float: right;
+    background: url(images/loading.gif);
+}
+
+/* ITEMS_PER_PAGE */
+#ct_items_per_page_container{
+    float: right;
+}
+
+/* TABLE */
+#ct {
+    border-collapse:collapse;
+    width:100%;
+    margin-top: 10px;
+    clear: both;
+}
+
+#ct th{
+    border-bottom-color:#DDDDDD;
+    border-bottom-style:solid;
+    border-bottom-width:1px;
+    line-height:normal;
+    padding:10px 20px 10px 10px;
+    background-repeat:no-repeat;
+    background-attachment:scroll;
+    background-position:right center;
+    text-align:left;
+    cursor: pointer;
+}
+
+#ct th.sort{
+    background-image: url(images/sort_black.gif);
+}
+
+#ct th.sort_asc{
+    background-image: url(images/sort_asc_black.gif);
+}
+
+#ct th.sort_desc{
+    background-image: url(images/sort_desc_black.gif);
+}
+
+#ct_multiple_search th{
+    padding:0px;
+}
+
+#ct_multiple_search th input{
+    width: 100%;
+    padding: 0px;
+    height: 20px;
+    border: 0px;
+}
+
+#ct td{
+    border-bottom-color:#DDDDDD;
+    border-bottom-style:solid;
+    border-bottom-width:1px;
+    line-height:normal;
+    padding:10px;
+    text-align:left;
+}
+
+#ct .odd, #ct_no_results{
+    background-color: #FBFBFB;
+}
+
+/*
+#ct .odd:hover{
+    background-color: #d7ffda;
+}
+*/
+
+#ct .even{
+    background-color: #FFFFFF;
+}
+
+/*
+#ct .even:hover{
+    background-color: #e0fee2;
+}
+*/
+
+/* BOTTOM CONTAINER : ACTIONS + PAGER */
+/*
+    #ct_bottom_container{
+}
+*/
+
+/* ACTIONS */
+#ct_actions_container{
+    margin-top: 20px;
+    float: left;
+}
+
+/* PAGER */
+/* YOU MAY DELETE THIS IF YOU DONT USE THE CREATIVE PAGER */
+#ct_pager{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: right;
+    clear: both;
+}
+
+#ct_pager li{
+    display: inline;
+}
+
+#ct_pager li a{
+    display: inline;
+    color:#008EE8;
+    font-size: 10px;
+    text-decoration:none;
+    font-weight: bold;
+    border:1px solid #CCCCCC;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    margin: 0px 1px;
+    padding:3px 6px;
+}
+
+#ct_pager li a:hover{
+    border-color: #D77011;
+    background-color: #EC8526;
+    color: #ffffff;
+}
+
+#ct_pager li a.selected{
+    border-color: #0082D5;
+    background-color: #39A3E6;
+    color: #ffffff;
+}
+
+#ct_pager_info1{
+    font-size: 9px;
+    height: 20px;
+    margin: 5px 0px 10px 0px;
+    padding: 0px 10px 0px 10px;
+    float: right;
+}
+
+#ct_pager_info2{
+    font-size: 9px;
+    padding: 0px 10px 0px 10px;
+    display: block;
+    float: right;
+}
+
+#ct_pager_pos_first{
+    color: #000000;
+    font-size: 12px;
+    margin-right: 3px;
+    padding: 5px;
+}
+
+#ct_pager_pre_last{
+    color: #000000;
+    font-size: 12px;
+    margin-right: 3px;
+    padding: 5px;
+}
+
+td {
+    border:solid 1px;
+    padding:4px;
+}
+
+.deleteHighlight {
+    background-color:red;
+    }

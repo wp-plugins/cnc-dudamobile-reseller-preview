@@ -1,0 +1,216 @@
+/* SEARCH */
+.ct_search_container{
+    float: right;
+    width: 250px;
+    padding: 5px 15px;
+    position: relative;
+    height: 23px;
+    background: #75b600 url(images/green_bk.gif) repeat-x right center;
+}
+
+#ct_search_container a:link, #ct_search_container a:visited{
+    color: #eeeeee;
+    text-decoration: none;
+}
+
+#ct_search_container a:hover, #ct_search_container a:active {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#ct_search{
+    color: #555555;
+    width: 200px;
+    height: 20px;
+    padding: 0px 25px 0px 5px;
+    border: 1px solid #aaaaaa;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+
+#ct_search_value{
+    position: absolute;
+    top: 0px;
+    left: 7px;
+    opacity:0;
+    filter:alpha(opacity=0);
+    z-index: 300;
+}
+
+#ct_advanced_search{
+    position: absolute;
+    top: 8px;
+    left: 220px;
+    z-index: 300;
+    width: 16px;
+    height: 16px;
+    background: url(images/advanced_search.png);
+}
+
+#ct_loader{
+    display: none;
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+    float: right;
+    background: url(images/loading.gif);
+}
+
+/* ITEMS_PER_PAGE */
+#ct_items_per_page_container{
+    float: left;
+    padding: 5px 15px;
+    width: 338px;
+    height: 23px;
+    background: #75b600 url(images/green_bk.gif) repeat-x right center;
+}
+
+/* TABLE */
+#ct {
+    border-collapse:collapse;
+    width:100%;
+    margin-top: 0px;
+    clear: both;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+#ct th{
+    color: #555555;
+    font-weight: normal;
+    text-align: left;
+    text-decoration: none;
+    background-color: #ffffff;
+    background-repeat:no-repeat;
+    background-attachment:scroll;
+    background-position:right center;
+    border-bottom: 1px solid #DDDDDD;
+    padding:5px 20px 5px 8px;
+    margin: 0px;
+    cursor: pointer;
+}
+
+#ct th.sort{
+    background-image: url(images/sort_black.gif);
+}
+
+#ct th.sort_asc{
+    background-image: url(images/sort_asc_black.gif);
+}
+
+#ct th.sort_desc{
+    background-image: url(images/sort_desc_black.gif);
+}
+
+#ct_multiple_search th{
+    padding:0px;
+}
+
+#ct_multiple_search th input{
+    width: 100%;
+    padding: 0px;
+    height: 20px;
+    border: 0px;
+}
+
+#ct td{
+    color: #555555;
+    padding:5px 8px;
+}
+
+#ct .odd, #ct_no_results{
+    background-color: #f3f3f3;
+}
+
+/*
+#ct .odd:hover{
+    background-color: #EEFFEE;
+}
+*/
+
+#ct .even{
+    background-color: #FFFFFF;
+}
+
+/*
+#ct .even:hover{
+    background-color: #DDFFDD;
+}
+*/
+
+/* BOTTOM CONTAINER : ACTIONS + PAGER */
+/*
+#ct_bottom_container{
+}
+*/
+
+/* ACTIONS */
+#ct_actions_container{
+    margin-top: 20px;
+    float: left;
+}
+
+/* PAGER */
+/* YOU MAY DELETE THIS IF YOU DONT USE THE CREATIVE PAGER */
+#ct_pager{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+    clear: both;
+    margin-top: 5px;
+}
+
+#ct_pager li{
+    display: inline;
+}
+
+#ct_pager li a{
+    display: inline;
+    color:#57A000;
+    font-size: 10px;
+    text-decoration:none;
+    font-weight: normal;
+    border:1px solid #DDDDDD;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    margin: 0px 1px;
+    padding:3px 6px;
+}
+
+#ct_pager li a:hover{
+    border-color: #DDDDDD;
+    color: #777777;
+}
+
+#ct_pager li a.selected{
+    border-color: #459300;
+    background: #75b600 url(images/green_bk.gif) repeat-x right center;
+    color: #ffffff;
+}
+
+#ct_pager_info1{
+    display: none;
+}
+
+#ct_pager_info2{
+    margin-top: 5px;
+    color: #555555;
+    font-size: 9px;
+    padding: 0px 10px 0px 10px;
+    display: block;
+    float: right;
+}
+
+#ct_pager_pos_first{
+    color: #000000;
+    font-size: 12px;
+    margin-right: 3px;
+    padding: 5px;
+}
+
+#ct_pager_pre_last{
+    color: #000000;
+    font-size: 12px;
+    margin-right: 3px;
+    padding: 5px;
+}

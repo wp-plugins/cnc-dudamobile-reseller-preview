@@ -1,0 +1,230 @@
+/* RESET */
+html,ul,li{ margin: 0px; padding: 0px;}
+body, input{ font-family: Verdana; font-size: 12px; }
+
+/* TOP CONTAINER : SEARCH + ITEMS PER PAGE */
+/*
+#ct_top_container{
+}
+*/
+
+/* SEARCH */
+#ct_search_container{
+    position: relative;
+    float: left;
+    margin-bottom: 15px;
+}
+
+#ct_search{
+    width: 200px;
+    padding: 0px 25px 0px 5px;
+    height: 18px;
+}
+
+#ct_search_value{
+    position: absolute;
+    top: 0px;
+    left: 7px;
+    opacity:0;
+    filter:alpha(opacity=0);
+    z-index: 300;
+}
+
+#ct_advanced_search{
+    position: absolute;
+    top: 3px;
+    left: 210px;
+    z-index: 300;
+}
+
+#ct_loader{
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+    float: right;
+}
+
+/* ITEMS_PER_PAGE */
+#ct_items_per_page_container{
+    float: right;
+    margin-bottom: 15px;
+}
+
+/* TABLE */
+#ct {
+    border-collapse:collapse;
+    width:700px;
+    clear: both;
+}
+
+#ct th{
+    color: #ffffff;
+    font-weight: normal;
+    text-align: left;
+    text-decoration: none;
+    border:1px solid #404046;
+    padding:3px 0px 3px 8px;
+    background-color: #404046;
+    margin: 0px;
+    cursor: pointer;
+}
+
+#ct th span{
+    display: block;
+    float: right;
+    margin-top: 5px;
+}
+
+#ct th span.sort{
+    width: 21px;
+    height: 9px;
+    background: url(../images/sort_white.gif) no-repeat right center;
+}
+
+#ct th span.sort_asc{
+    width: 21px;
+    height: 9px;
+    background: url(../images/sort_asc_white.gif) no-repeat right center;
+}
+
+#ct th span.sort_desc{
+    width: 21px;
+    height: 9px;
+    background: url(../images/sort_desc_white.gif) no-repeat right center;
+}
+
+#ct_multiple_search th{
+    padding:0px;
+}
+
+#ct_multiple_search th input{
+    width: 100%;
+    padding: 0px;
+    height: 20px;
+    border: 0px;
+}
+
+#ct td{
+    color: 555555;
+    border:1px solid #E3E3E3;
+    padding:5px 8px;
+}
+
+#ct .odd, #ct_no_results{
+    background-color: #ffffff;
+}
+
+/*
+#ct .odd:hover{
+    background-color: #f1f0f0;
+}
+*/
+
+#ct .odd_selected{
+    background-color: #ff0000;
+}
+
+#ct .even{
+    background-color: #f5f5f5;
+}
+
+/*
+#ct .even:hover{
+    background-color: #efeeee;
+}
+*/
+
+#ct .even_selected{
+    background-color: #ff0000;
+}
+
+#ct a:link, #ct a:visited{
+    color: #04A3F5;
+    text-decoration: none;
+}
+
+#ct a:hover, #ct a:active{
+    color: #04A3F5;
+    text-decoration: underline;
+}
+
+
+/* BOTTOM CONTAINER : ACTIONS + PAGER */
+/*
+#ct_bottom_container{
+}
+*/
+
+/* ACTIONS */
+#ct_actions_container{
+    margin-top: 20px;
+    float: left;
+}
+
+/* PAGER */
+/* YOU MAY DELETE THIS IF YOU DONT USE THE CREATIVE PAGER */
+#ct_pager_container{
+    clear: right;
+    float: right;
+    width: 500px;
+    margin-bottom: 15px;
+}
+
+#ct_pager{
+    list-style: none;
+    clear: both;
+    float: right;
+}
+
+#ct_pager li{
+    display: inline;
+}
+
+#ct_pager li a{
+    display: inline;
+    color: #ffffff;
+    font-size: 12px;
+    text-decoration: none;
+    margin-right: 3px;
+    padding: 5px;
+    background-color: #404046;
+}
+
+#ct_pager li a:hover{
+    background-color: #99CC33;
+    color: #ffffff;
+}
+
+#ct_pager li a.selected{
+    background-color: #04A3F5;
+    color: #ffffff;
+}
+
+#ct_pager_info1{
+    font-size: 9px;
+    height: 20px;
+    margin: 5px 0px 10px 0px;
+    padding: 0px 10px 0px 10px;
+    float: right;
+}
+
+#ct_pager_info2{
+    font-size: 9px;
+    padding: 0px 10px 0px 10px;
+    display: block;
+    float: right;
+}
+
+#ct_pager_pos_first{
+    color: #000000;
+    font-size: 12px;
+    margin-right: 3px;
+    padding: 5px;
+}
+
+#ct_pager_pre_last{
+    color: #000000;
+    font-size: 12px;
+    margin-right: 3px;
+    padding: 5px;
+}
