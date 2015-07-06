@@ -1,0 +1,31 @@
+#cncForm { 
+  width: 100%;
+    margin: 0 auto;
+
+} 
+
+.cncSubmit{
+	position:relative;
+	top:-37px;
+	margin-left:360px;
+}
+
+
+
+#ifrmsite{
+	width: 200px;
+	
+}
+
+.cnc_url{
+	border:2px solid #456879;
+	border-radius:10px;
+	height: 22px;
+	width: 230px;	
+}
+
+.cnc_submit{
+	padding:3px;
+	font-weight:bold;
+	
+}

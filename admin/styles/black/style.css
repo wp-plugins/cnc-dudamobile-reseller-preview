@@ -1,0 +1,233 @@
+/* TOP CONTAINER : SEARCH + ITEMS PER PAGE */
+#ct_top_container{
+    width:100%;
+    border: 1px solid #161616;
+    -moz-border-radius-topleft: 4px;
+    -webkit-border-top-left-radius: 4px;
+    -moz-border-radius-topright: 4px;
+    -webkit-border-top-right-radius: 4px;
+}
+
+/* SEARCH */
+#ct_search_container{
+    float: left;
+    position: relative;
+    padding: 5px 15px;
+    width: 338px;
+    height: 23px;
+    background-color: #161616;
+}
+
+#ct_search_container a:link, #ct_search_container a:visited{
+    color: #cccccc;
+    text-decoration: none;
+}
+
+#ct_search_container a:hover, #ct_search_container a:active {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#ct_search{
+    width: 200px;
+    padding: 0px 25px 0px 5px;
+    height: 18px;
+}
+
+#ct_search_value{
+    position: absolute;
+    top: 0px;
+    left: 7px;
+    opacity:0;
+    filter:alpha(opacity=0);
+    z-index: 300;
+}
+
+#ct_advanced_search{
+    position: absolute;
+    top: 8px;
+    left: 220px;
+    z-index: 300;
+    width: 16px;
+    height: 16px;
+    background: url(images/advanced_search.png);
+}
+
+#ct_loader{
+    display: none;
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+    float: right;
+    background: url(images/loading.gif);
+}
+
+/* ITEMS_PER_PAGE */
+#ct_items_per_page_container{
+    float: right;
+    padding: 5px 15px;
+    width: 250px;
+    height: 23px;
+    background-color: #161616;
+    text-align: right;
+}
+
+/* TABLE */
+#ct {
+    border-collapse:collapse;
+    width:100%;
+    clear: both;
+}
+
+#ct th{
+    font-size: 12px;
+    font-family: Arial,Tahoma,sans-serif;
+    color: #CCCCCC;
+    font-weight: bold;
+    text-align: left;
+    text-decoration: none;
+    border-bottom:1px solid ##333333;
+    padding:4px 20px 4px 5px;
+    background-color: #111111;
+    background-repeat:no-repeat;
+    background-attachment:scroll;
+    background-position:right center;
+    cursor: pointer;
+}
+
+#ct th.sort{
+    background-image: url(images/sort_white.gif);
+}
+
+#ct th.sort_asc{
+    background-image: url(images/sort_asc_white.gif);
+}
+
+#ct th.sort_desc{
+    background-image: url(images/sort_desc_white.gif);
+}
+
+#ct_multiple_search th{
+    padding:0px;
+}
+
+#ct_multiple_search th input{
+    width: 100%;
+    padding: 0px;
+    height: 20px;
+    border: 0px;
+}
+
+#ct td{
+    font-size: 12px;
+    font-family: Arial,Tahoma,sans-serif;
+    color: #CCCCCC;
+    padding:6px 5px;
+}
+
+#ct .odd, #ct_no_results{
+    background-color: #242424;
+}
+
+/*
+#ct .odd:hover{
+    background-color: #f1f0f0;
+}
+
+#ct .odd_selected{
+    background-color: #ff0000;
+}
+*/
+
+#ct .even{
+    background-color: #272727;
+}
+
+/*
+#ct .even:hover{
+    background-color: #efeeee;
+}
+
+#ct .even_selected{
+    background-color: #ff0000;
+}
+*/
+
+/* BOTTOM CONTAINER : ACTIONS + PAGER */
+#ct_pager_container{
+    width:100%;
+    height: 33px;
+    background-color: #161616;
+    -moz-border-radius-bottomleft: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    -moz-border-radius-bottomright: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+}
+
+/* ACTIONS */
+#ct_actions_container{
+    margin-top: 20px;
+    float: left;
+}
+
+/* PAGER */
+/* YOU MAY DELETE THIS IF YOU DONT USE THE CREATIVE PAGER */
+#ct_pager{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+    margin-top: 7px;
+    margin-right: 15px;
+}
+
+#ct_pager li{
+    display: inline;
+}
+
+#ct_pager li a{
+    display: inline;
+    color: #ffffff;
+    font-size: 12px;
+    font-family: Arial,Tahoma,sans-serif;
+    text-decoration: none;
+    margin-right: 3px;
+    padding: 4px 7px;
+    border:1px solid #222222;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+#ct_pager li a:hover{
+    border: 1px solid #7DBC00;
+    background: #7DBC00 url(images/black_btn.png) repeat-x left top;
+    color: #ffffff;
+}
+
+#ct_pager li a.selected{
+    border: 1px solid #7DBC00;
+    background: #7DBC00 url(images/black_btn.png) repeat-x left top;
+    color: #ffffff;
+}
+
+#ct_pager_info1{
+    display: none;
+}
+
+#ct_pager_info2{
+    display: none;
+}
+
+#ct_pager_pos_first{
+    color: #ffffff;
+    font-size: 12px;
+    margin-right: 3px;
+    padding: 5px;
+}
+
+#ct_pager_pre_last{
+    color: #ffffff;
+    font-size: 12px;
+    margin-right: 3px;
+    padding: 5px;
+}
